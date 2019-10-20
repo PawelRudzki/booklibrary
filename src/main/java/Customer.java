@@ -26,7 +26,7 @@ public class Customer {
 
     @Override
     public String toString(){
-        return "ID: "+customerID+" "+name+" "+lastName+" ";
+        return customerID+" "+name+" "+lastName+" "+accountBalance+" "+booksBorrowedList;
     }
 
 }

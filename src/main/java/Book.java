@@ -16,5 +16,11 @@ public class Book {
     private String publishingHouse;
     private BookCategory bookCategory;
 
+    @Override
+    public String toString(){
+        return isbnNr+" "+name+" "+publicationYear+" "+publishingHouse
+                +" "+bookCategory+" "+authors;
+    }
+
 
 }

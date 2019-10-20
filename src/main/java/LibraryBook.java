@@ -15,5 +15,10 @@ public class LibraryBook {
     private Date borrrowDate;
     private Customer borrowedBy;
 
+    @Override
+    public String toString(){
+        return book+" "+bookID+" "+singleBorrowingDuration+" "+borrrowDate+" "+borrowedBy;
+    }
+
 
 }
