@@ -55,10 +55,46 @@ public class LibraryTest {
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
 
         //when
+        library.addCustomer(customer);
+
+        //then
+        assertEquals(1, library.getCustomerList().size());
 
     }
 
     @Test
     public void dateDifference() {
     }
+
+    @Test(expected = IllegalStateException.class)
+    public void lendBookCustomerOverFiveBooks() {
+
+        //given
+        BooksContainer booksContainer = new BooksContainer();
+
+        Customer customer = booksContainer.getCustomer();
+
+        Library library = new Library(new ArrayList<>(), new ArrayList<>());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        customer.borrowBook(library, library.getLibraryWarehouse().get(0));
+        customer.borrowBook(library, library.getLibraryWarehouse().get(1));
+        customer.borrowBook(library, library.getLibraryWarehouse().get(2));
+        customer.borrowBook(library, library.getLibraryWarehouse().get(3));
+        customer.borrowBook(library, library.getLibraryWarehouse().get(4));
+        customer.borrowBook(library, library.getLibraryWarehouse().get(5));
+
+        //when
+        customer.borrowBook(library, library.getLibraryWarehouse().get(6));
+
+        //then
+
+    }
+
+
 }
