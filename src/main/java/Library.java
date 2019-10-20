@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Getter
 @AllArgsConstructor
@@ -14,11 +15,44 @@ public class Library {
     private List<LibraryBook> libraryWarehouse;
     private List<Customer> customerList;
 
-    public void lendBook(LibraryBook libraryBook){
+    public void lendBook(Customer customer, LibraryBook libraryBook) {
+
+        if (customer.getAccountBalance() > 100) {
+            throw new IllegalStateException("You owe us a lot of money!");
+        }
+        List<LibraryBook> booksBorrowedByCustomer = libraryWarehouse
+                .stream()
+                .filter(a -> a.getBorrowedBy().getCustomerID() == customer.getCustomerID())
+                .collect(Collectors.toList());
+        if (booksBorrowedByCustomer.size() > 5) {
+            throw new IllegalStateException("Sorry, you have too many books from us already!");
+        } else {
+
+            Optional<LibraryBook> exists = libraryWarehouse
+                    .stream()
+                    .filter(a -> a.getBookID() == libraryBook.getBookID())
+                    .findAny();
+            if (!exists.isPresent()) {
+                throw new IllegalArgumentException("We don't have this book!");
+            } else {
+                LibraryBook bookToLend = libraryWarehouse
+                        .stream()
+                        .filter(a -> a.getBookID() == libraryBook.getBookID())
+                        .findAny()
+                        .orElse(null);
+                if (bookToLend.getBorrowedBy() == null) {
+                    bookToLend.setBorrowedBy(customer);
+                    bookToLend.setBorrrowDate(new Date());
+
+                }
+            }
+        }
+
 
     }
-    
+
     public void acceptBook(LibraryBook libraryBook) {
+
         Optional<LibraryBook> exists = libraryWarehouse
                 .stream()
                 .filter(a -> a.getBookID() == libraryBook.getBookID())
@@ -28,10 +62,10 @@ public class Library {
         } else {
 
             long daysReturnedAfterDeadline = dateDifference(libraryBook.getBorrrowDate());
-            if (daysReturnedAfterDeadline>libraryBook.getSingleBorrowingDuration()){
+            if (daysReturnedAfterDeadline > libraryBook.getSingleBorrowingDuration()) {
                 libraryBook.getBorrowedBy().setAccountBalance(
-                        libraryBook.getBorrowedBy().getAccountBalance() + daysReturnedAfterDeadline* oneDayPenalty);
-        }
+                        libraryBook.getBorrowedBy().getAccountBalance() + daysReturnedAfterDeadline * oneDayPenalty);
+            }
             libraryBook.setBorrowedBy(null);
             libraryBook.setBorrrowDate(null);
         }

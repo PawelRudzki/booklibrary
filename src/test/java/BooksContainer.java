@@ -26,12 +26,5 @@ public class BooksContainer {
                 "Jan", "Nowak", new ArrayList<>(), 0);
     }
 
-    public Customer getCustomerWithBooks() {
-        Random generator = new Random();
-        List<LibraryBook> bookList = new ArrayList<>();
-        bookList.add(getLibraryBook());
-        return new Customer(generator.nextInt(1000) + 500,
-                "Jan", "Nowak", new ArrayList<>(), 0);
-    }
 
 }

@@ -11,18 +11,17 @@ public class LibraryTest {
 
         //given
         BooksContainer booksContainer = new BooksContainer();
+
         Customer customer = booksContainer.getCustomer();
+
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
+        library.addBook(booksContainer.getLibraryBook());
 
         //when
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
+        customer.giveBackBook(library, customer.getBooksBorrowedList().get(0));
 
         //then
-        assertEquals(5, library.getLibraryWarehouse().size());
+        assertEquals(1, customer.getBooksBorrowedList().size());
 
 
     }
