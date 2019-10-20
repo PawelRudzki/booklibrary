@@ -8,11 +8,22 @@ import java.util.Optional;
 @NoArgsConstructor
 public class Library {
 
+    private final double dayPenalty = 0.80;
     private List<LibraryBook> libraryWarehouse;
     private List<Customer> customerList;
 
-    public void acceptBook(Customer customer, LibraryBook libraryBook){
-        
+    public void acceptBook(LibraryBook libraryBook) {
+        Optional<LibraryBook> exists = libraryWarehouse
+                .stream()
+                .filter(a -> a.getBookID() == libraryBook.getBookID())
+                .findAny();
+        if (!exists.isPresent()) {
+            throw new IllegalArgumentException("This book is not from our library.");
+        } else {
+
+            libraryBook.setBorrowedBy(null);
+            libraryBook.setBorrrowDate(null);
+        }
     }
 
     public void addBook(LibraryBook newLibraryBook) {
