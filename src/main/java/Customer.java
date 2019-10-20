@@ -21,6 +21,6 @@ public class Customer {
 
 
     public void borrowBook(Library library, LibraryBook libraryBook){
-        library.lendBook(this,libraryBook);
+        library.lendBook(this, libraryBook);
     }
 }

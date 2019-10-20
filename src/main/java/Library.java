@@ -22,6 +22,7 @@ public class Library {
         }
         List<LibraryBook> booksBorrowedByCustomer = libraryWarehouse
                 .stream()
+                .filter(b -> b.getBorrowedBy() != null)
                 .filter(a -> a.getBorrowedBy().getCustomerID() == customer.getCustomerID())
                 .collect(Collectors.toList());
         if (booksBorrowedByCustomer.size() > 5) {
@@ -43,6 +44,7 @@ public class Library {
                 if (bookToLend.getBorrowedBy() == null) {
                     bookToLend.setBorrowedBy(customer);
                     bookToLend.setBorrrowDate(new Date());
+                    customer.getBooksBorrowedList().add(bookToLend);
 
                 }
             }

@@ -16,6 +16,7 @@ public class LibraryTest {
 
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
         library.addBook(booksContainer.getLibraryBook());
+        customer.borrowBook(library, library.getLibraryWarehouse().get(0));
 
         //when
         customer.giveBackBook(library, customer.getBooksBorrowedList().get(0));
