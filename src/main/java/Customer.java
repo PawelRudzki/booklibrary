@@ -1,8 +1,8 @@
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
 
-@Setter
+import java.util.List;
+
 @Getter
 @AllArgsConstructor
 public class Customer {
@@ -10,7 +10,12 @@ public class Customer {
     private int customerID;
     private String name;
     private String lastName;
-    private int booksBorrowed;
+    private List<LibraryBook> booksBorrowedList;
     private double accountBalance;
+
+    public void giveBackBook(Library library, LibraryBook libraryBook){
+        library.acceptBook(libraryBook);
+    }
+
 
 }

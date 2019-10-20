@@ -22,7 +22,7 @@ public class BooksContainer {
     public Customer getCustomer() {
         Random generator = new Random();
         return new Customer(generator.nextInt(1000) + 500,
-                "Jan", "Nowak", 0, 0);
+                "Jan", "Nowak", null, 0);
     }
 
 }
