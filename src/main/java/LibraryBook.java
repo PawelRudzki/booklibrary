@@ -8,6 +8,7 @@ import java.util.Date;
 public class LibraryBook {
 
     private Book book;
+    private int bookID;
     private int singleBorrowingDuration;
     private Date borrrowDate;
     private Customer borrowedBy;
