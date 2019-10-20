@@ -80,6 +80,8 @@ public class Library {
                 .findAny();
         if (!exists.isPresent()) {
             libraryWarehouse.add(newLibraryBook);
+        } else {
+            throw new IllegalStateException("We already have this book!");
         }
     }
 
@@ -90,6 +92,8 @@ public class Library {
                 .findAny();
         if (!exists.isPresent()) {
             customerList.add(customer);
+        } else {
+            throw new IllegalStateException("This customer already exists!");
         }
     }
 

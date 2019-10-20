@@ -48,6 +48,14 @@ public class LibraryTest {
 
     @Test
     public void addCustomer() {
+
+        //given
+        BooksContainer  booksContainer = new BooksContainer();
+        Customer customer = booksContainer.getCustomer();
+        Library library = new Library(new ArrayList<>(), new ArrayList<>());
+
+        //when
+
     }
 
     @Test
