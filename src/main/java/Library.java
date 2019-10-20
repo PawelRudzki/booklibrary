@@ -11,13 +11,32 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class Library {
 
-    private final double oneDayPenalty = 0.80;
+    private final double oneDayPenalty = 0.02;
     private List<LibraryBook> libraryWarehouse;
     private List<Customer> customerList;
 
-    public void lendBook(Customer customer, LibraryBook libraryBook) {
+    public void getDebtRaport() {
+        customerList
+                .stream()
+                .filter(a -> a.getAccountBalance() > 0)
+                .forEach(b -> System.out.println(b.toString() + " debt: " + b.getAccountBalance()+"zł"));
 
-        if (customer.getAccountBalance() > 100) {
+        double debtValueTotal = customerList
+                .stream()
+                .mapToDouble(Customer::getAccountBalance)
+                .reduce(0, (subtotal, b) -> subtotal + b);
+        System.out.println("Total: " + debtValueTotal +"zł");
+    }
+
+    public void lendBook(Customer customer, LibraryBook libraryBook) {
+        Optional<Customer> customerExists = customerList
+                .stream()
+                .filter(a -> a.getCustomerID() == customer.getCustomerID())
+                .findAny();
+        if (!customerExists.isPresent()) {
+            throw new IllegalArgumentException("This is not our customer!");
+        }
+        if (customer.getAccountBalance() > 20) {
             throw new IllegalStateException("You owe us a lot of money!");
         }
         List<LibraryBook> booksBorrowedByCustomer = libraryWarehouse
@@ -97,19 +116,19 @@ public class Library {
         }
     }
 
-        public void addCustomer(Customer customer){
-            Optional<Customer> exists = customerList
-                    .stream()
-                    .filter(a -> a.getCustomerID() == customer.getCustomerID())
-                    .findAny();
-            if (!exists.isPresent()) {
-                customerList.add(customer);
-            } else {
-                throw new IllegalStateException("This customer already exists!");
-            }
+    public void addCustomer(Customer customer) {
+        Optional<Customer> exists = customerList
+                .stream()
+                .filter(a -> a.getCustomerID() == customer.getCustomerID())
+                .findAny();
+        if (!exists.isPresent()) {
+            customerList.add(customer);
+        } else {
+            throw new IllegalStateException("This customer already exists!");
         }
+    }
 
-    public void removeCustomer(Customer customer){
+    public void removeCustomer(Customer customer) {
         Optional<Customer> exists = customerList
                 .stream()
                 .filter(a -> a.getCustomerID() == customer.getCustomerID())
@@ -121,11 +140,11 @@ public class Library {
         }
     }
 
-        public static long dateDifference (Date date){
-            Date currentDate = new Date();
-            long difference = Math.abs(currentDate.getTime() - date.getTime());
-            return difference / ((long) (1000 * 60 * 60 * 24));
-        }
-
-
+    public static long dateDifference(Date date) {
+        Date currentDate = new Date();
+        long difference = Math.abs(currentDate.getTime() - date.getTime());
+        return difference / ((long) (1000 * 60 * 60 * 24));
     }
+
+
+}

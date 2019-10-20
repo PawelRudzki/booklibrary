@@ -23,4 +23,10 @@ public class Customer {
     public void borrowBook(Library library, LibraryBook libraryBook){
         library.lendBook(this, libraryBook);
     }
+
+    @Override
+    public String toString(){
+        return "ID: "+customerID+" "+name+" "+lastName+" ";
+    }
+
 }

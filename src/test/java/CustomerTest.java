@@ -10,10 +10,10 @@ public class CustomerTest {
     public void borrowBook() {
         //given
         BooksContainer booksContainer = new BooksContainer();
-
         Customer customer = booksContainer.getCustomer();
-
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
+        library.addCustomer(customer);
+
         library.addBook(booksContainer.getLibraryBook());
 
         //when
@@ -31,8 +31,8 @@ public class CustomerTest {
         BooksContainer booksContainer = new BooksContainer();
 
         Customer customer = booksContainer.getCustomer();
-
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
+        library.addCustomer(customer);
         library.addBook(booksContainer.getLibraryBook());
         customer.borrowBook(library, library.getLibraryWarehouse().get(0));
 
