@@ -1,6 +1,7 @@
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,7 +9,7 @@ import java.util.Optional;
 @NoArgsConstructor
 public class Library {
 
-    private final double dayPenalty = 0.80;
+    private final double oneDayPenalty = 0.80;
     private List<LibraryBook> libraryWarehouse;
     private List<Customer> customerList;
 
@@ -21,6 +22,11 @@ public class Library {
             throw new IllegalArgumentException("This book is not from our library.");
         } else {
 
+            long daysReturnedAfterDeadline = dateDifference(libraryBook.getBorrrowDate());
+            if (daysReturnedAfterDeadline>libraryBook.getSingleBorrowingDuration()){
+                libraryBook.getBorrowedBy().setAccountBalance(
+                        libraryBook.getBorrowedBy().getAccountBalance() + daysReturnedAfterDeadline* oneDayPenalty);
+            }
             libraryBook.setBorrowedBy(null);
             libraryBook.setBorrrowDate(null);
         }
@@ -44,6 +50,12 @@ public class Library {
         if (!exists.isPresent()) {
             customerList.add(customer);
         }
+    }
+
+    public static long dateDifference(Date date) {
+        Date currentDate = new Date();
+        long difference = Math.abs(currentDate.getTime() - date.getTime());
+        return difference / ((long) (1000 * 60 * 60 * 24));
     }
 
 
