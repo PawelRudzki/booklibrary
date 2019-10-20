@@ -14,6 +14,7 @@ public class Book {
     private Set<Author> authors;
     private String publicationYear;
     private String publishingHouse;
+    private BookCategory bookCategory;
 
 
 }

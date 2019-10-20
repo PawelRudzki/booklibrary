@@ -1,0 +1,14 @@
+public enum BookCategory {
+    HISTORICAL,
+    ELEMENTARY,
+    DICTIONARY,
+    RELIGION,
+    ADVENTURE,
+    GEOGRAPHY,
+    KIDS,
+    ROMANTIC,
+    BIOGRAPHIC,
+    SPORT,
+    PROGRAMMING,
+    PSYCHOLOGY
+}
