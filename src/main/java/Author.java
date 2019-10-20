@@ -13,4 +13,8 @@ public class Author implements Comparable <Author> {
     public int compareTo(Author author) {
         return lastName.compareTo(author.lastName);
     }
+
+    public String toString(){
+        return firstName+" "+lastName;
+    }
 }
