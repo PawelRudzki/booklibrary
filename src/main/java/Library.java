@@ -108,6 +108,7 @@ public class Library {
                 throw new IllegalStateException("This customer already exists!");
             }
         }
+
     public void removeCustomer(Customer customer){
         Optional<Customer> exists = customerList
                 .stream()
