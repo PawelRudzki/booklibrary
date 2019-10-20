@@ -45,6 +45,45 @@ public class LibraryTest {
         //then
         assertEquals(5, library.getLibraryWarehouse().size());
     }
+    @Test
+    public void removeBook(){
+//given
+        BooksContainer booksContainer = new BooksContainer();
+        Library library = new Library(new ArrayList<>(), new ArrayList<>());
+
+        //when
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.removeBook(library.getLibraryWarehouse().get(4));
+        library.removeBook(library.getLibraryWarehouse().get(3));
+
+        //then
+        assertEquals(3, library.getLibraryWarehouse().size());
+
+    }
+    @Test (expected = IllegalStateException.class)
+    public void removeBookExeption(){
+        //given
+        BooksContainer booksContainer = new BooksContainer();
+        Library library = new Library(new ArrayList<>(), new ArrayList<>());
+
+        //when
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.removeBook(booksContainer.getLibraryBook());
+
+
+        //then
+        assertEquals(3, library.getLibraryWarehouse().size());
+
+    }
+
 
     @Test
     public void addCustomer() {
@@ -53,10 +92,25 @@ public class LibraryTest {
         BooksContainer  booksContainer = new BooksContainer();
         Customer customer = booksContainer.getCustomer();
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
+        //when
+    }
+    @Test
+    public void removeCustomer(){
+        //given
+        BooksContainer  booksContainer = new BooksContainer();
+        Customer customer = booksContainer.getCustomer();
+        Library library = new Library(new ArrayList<>(), new ArrayList<>());
 
         //when
+        library.addCustomer(booksContainer.getCustomer());
+        library.removeCustomer(booksContainer.getCustomer());
+
+        //then
+        assertEquals(0, library.getCustomerList().size());
 
     }
+
+
 
     @Test
     public void dateDifference() {

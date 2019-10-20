@@ -85,23 +85,46 @@ public class Library {
         }
     }
 
-    public void addCustomer(Customer customer) {
+    public void removeBook(LibraryBook newLibraryBook) {
+        Optional<LibraryBook> exists = libraryWarehouse
+                .stream()
+                .filter(a -> a.getBookID() == newLibraryBook.getBookID())
+                .findAny();
+        if (exists.isPresent()) {
+            libraryWarehouse.remove(newLibraryBook);
+        } else {
+            throw new IllegalStateException("We don't have this book! We can't remove it");
+        }
+    }
+
+        public void addCustomer(Customer customer){
+            Optional<Customer> exists = customerList
+                    .stream()
+                    .filter(a -> a.getCustomerID() == customer.getCustomerID())
+                    .findAny();
+            if (!exists.isPresent()) {
+                customerList.add(customer);
+            } else {
+                throw new IllegalStateException("This customer already exists!");
+            }
+        }
+    public void removeCustomer(Customer customer){
         Optional<Customer> exists = customerList
                 .stream()
                 .filter(a -> a.getCustomerID() == customer.getCustomerID())
                 .findAny();
-        if (!exists.isPresent()) {
-            customerList.add(customer);
+        if (exists.isPresent()) {
+            customerList.remove(customer);
         } else {
-            throw new IllegalStateException("This customer already exists!");
+            throw new IllegalStateException("We don't have this customer on our list. We can't remove it");
         }
     }
 
-    public static long dateDifference(Date date) {
-        Date currentDate = new Date();
-        long difference = Math.abs(currentDate.getTime() - date.getTime());
-        return difference / ((long) (1000 * 60 * 60 * 24));
+        public static long dateDifference (Date date){
+            Date currentDate = new Date();
+            long difference = Math.abs(currentDate.getTime() - date.getTime());
+            return difference / ((long) (1000 * 60 * 60 * 24));
+        }
+
+
     }
-
-
-}
