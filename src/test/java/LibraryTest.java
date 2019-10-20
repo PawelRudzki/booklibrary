@@ -65,7 +65,7 @@ public class LibraryTest {
 
     }
     @Test (expected = IllegalStateException.class)
-    public void removeBookExeption(){
+    public void removeBookException(){
         //given
         BooksContainer booksContainer = new BooksContainer();
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
@@ -96,6 +96,21 @@ public class LibraryTest {
     }
     @Test
     public void removeCustomer(){
+        //given
+        BooksContainer  booksContainer = new BooksContainer();
+        Customer customer = booksContainer.getCustomer();
+        Library library = new Library(new ArrayList<>(), new ArrayList<>());
+
+        //when
+        library.addCustomer(booksContainer.getCustomer());
+        library.removeCustomer(library.getCustomerList().get(0));
+
+        //then
+        assertEquals(0, library.getCustomerList().size());
+
+    }
+    @Test (expected = IllegalStateException.class)
+    public void removeCustomerException() {
         //given
         BooksContainer  booksContainer = new BooksContainer();
         Customer customer = booksContainer.getCustomer();
