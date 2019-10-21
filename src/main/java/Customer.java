@@ -7,9 +7,9 @@ import java.util.List;
 @Setter
 @Getter
 @AllArgsConstructor
-public class Customer {
+public class Customer extends LibraryTypes{
 
-    private int customerID;
+    private int id;
     private String name;
     private String lastName;
     private List<LibraryBook> booksBorrowedList;
@@ -26,7 +26,7 @@ public class Customer {
 
     @Override
     public String toString(){
-        return customerID+" "+name+" "+lastName+" "+accountBalance+" "+booksBorrowedList;
+        return id +" "+name+" "+lastName+" "+accountBalance+" "+booksBorrowedList;
     }
 
 }

@@ -7,17 +7,18 @@ import java.util.Date;
 @Setter
 @Getter
 @AllArgsConstructor
-public class LibraryBook {
+public class LibraryBook extends LibraryTypes{
 
     private Book book;
-    private int bookID;
+    private int id;
     private int singleBorrowingDuration;
     private Date borrrowDate;
     private Customer borrowedBy;
 
     @Override
     public String toString(){
-        return book+" "+bookID+" "+singleBorrowingDuration+" "+borrrowDate+" "+borrowedBy;
+        return book+" "+ id +" "+singleBorrowingDuration
+                +" "+borrrowDate+" "+borrowedBy;
     }
 
 
