@@ -9,9 +9,11 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class Library {
 
-    private final double oneDayPenalty = 0.10;
+    private final double ONE_DAY_PENALTY = 0.10;
     private List<LibraryBook> libraryWarehouse;
     private List<Customer> customerList;
+
+    private final LibraryHelper libraryHelper = new LibraryHelper();
 
     public void getDebtRaport() {
         customerList
@@ -25,7 +27,6 @@ public class Library {
                 .reduce(0, (subtotal, b) -> subtotal + b);
         System.out.println("Total: " + debtValueTotal + "zł");
     }
-
 
     public void lendBook(Customer customer, LibraryBook libraryBook) {
         LibraryHelper libraryHelper = new LibraryHelper();
@@ -55,6 +56,8 @@ public class Library {
                     bookToLend.setBorrowedBy(customer);
                     bookToLend.setBorrrowDate(new Date());
                     customer.getBooksBorrowedList().add(bookToLend);
+                } else {
+                    throw new IllegalStateException("This book is already borrowed.");
                 }
             }
         }
@@ -65,11 +68,10 @@ public class Library {
         if (!libraryHelper.isThisIdInGivenList(libraryBook.getId(), this.getLibraryWarehouse())) {
             throw new IllegalArgumentException("This book is not from our library.");
         } else {
-
             long daysReturnedAfterDeadline = dateDifference(libraryBook.getBorrrowDate());
             if (daysReturnedAfterDeadline > libraryBook.getSingleBorrowingDuration()) {
                 libraryBook.getBorrowedBy().setAccountBalance(
-                        libraryBook.getBorrowedBy().getAccountBalance() + daysReturnedAfterDeadline * oneDayPenalty);
+                        libraryBook.getBorrowedBy().getAccountBalance() + daysReturnedAfterDeadline * ONE_DAY_PENALTY);
             }
             libraryBook.setBorrowedBy(null);
             libraryBook.setBorrrowDate(null);
@@ -78,39 +80,19 @@ public class Library {
     }
 
     public void addBook(LibraryBook newLibraryBook) {
-        LibraryHelper libraryHelper = new LibraryHelper();
-        if (!libraryHelper.isThisIdInGivenList(newLibraryBook.getId(), this.getLibraryWarehouse())) {
-            libraryWarehouse.add(newLibraryBook);
-        } else {
-            throw new IllegalStateException("We already have this book!");
-        }
+        libraryHelper.add(newLibraryBook, this.getLibraryWarehouse());
     }
 
     public void removeBook(LibraryBook bookToRemove) {
-        LibraryHelper libraryHelper = new LibraryHelper();
-        if (libraryHelper.isThisIdInGivenList(bookToRemove.getId(), this.getLibraryWarehouse())) {
-            libraryWarehouse.remove(bookToRemove);
-        } else {
-            throw new IllegalStateException("We don't have this book! We can't remove it");
-        }
+        libraryHelper.remove(bookToRemove, this.getLibraryWarehouse());
     }
 
     public void addCustomer(Customer customer) {
-        LibraryHelper libraryHelper = new LibraryHelper();
-        if (!libraryHelper.isThisIdInGivenList(customer.getId(), this.getCustomerList())) {
-            customerList.add(customer);
-        } else {
-            throw new IllegalStateException("This customer already exists!");
-        }
+        libraryHelper.add(customer, this.getCustomerList());
     }
 
     public void removeCustomer(Customer customer) {
-        LibraryHelper libraryHelper = new LibraryHelper();
-        if (libraryHelper.isThisIdInGivenList(customer.getId(), this.getCustomerList())) {
-            customerList.remove(customer);
-        } else {
-            throw new IllegalStateException("We don't have this customer on our list.");
-        }
+        libraryHelper.remove(customer, this.getCustomerList());
     }
 
     public static long dateDifference(Date date) {
