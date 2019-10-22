@@ -54,7 +54,7 @@ public class Library {
                         .orElse(null);
                 if (bookToLend.getBorrowedBy() == null) {
                     bookToLend.setBorrowedBy(customer);
-                    bookToLend.setBorrrowDate(new Date());
+                    bookToLend.setBorrowDate(new Date());
                     customer.getBooksBorrowedList().add(bookToLend);
                 } else {
                     throw new IllegalStateException("This book is already borrowed.");
@@ -68,13 +68,13 @@ public class Library {
         if (!libraryHelper.isThisIdInGivenList(libraryBook.getId(), this.getLibraryWarehouse())) {
             throw new IllegalArgumentException("This book is not from our library.");
         } else {
-            long daysReturnedAfterDeadline = dateDifference(libraryBook.getBorrrowDate());
+            long daysReturnedAfterDeadline = dateDifference(libraryBook.getBorrowDate());
             if (daysReturnedAfterDeadline > libraryBook.getSingleBorrowingDuration()) {
                 libraryBook.getBorrowedBy().setAccountBalance(
                         libraryBook.getBorrowedBy().getAccountBalance() + daysReturnedAfterDeadline * ONE_DAY_PENALTY);
             }
             libraryBook.setBorrowedBy(null);
-            libraryBook.setBorrrowDate(null);
+            libraryBook.setBorrowDate(null);
         }
 
     }

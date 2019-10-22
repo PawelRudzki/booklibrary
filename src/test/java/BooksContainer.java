@@ -10,6 +10,8 @@ public class BooksContainer {
     public Book getBook() {
         Set<Author> authorList = new TreeSet<>();
         authorList.add(getAuthor());
+        authorList.add(new Author("Andrzej", "Gołota"));
+        authorList.add(new Author("Juliusz", "Słowacki"));
         return new Book("ISBN 123-234-21-234", "Janko Muzykant", authorList,
                 "1999", "Zysk i Ska", BookCategory.ADVENTURE);
     }

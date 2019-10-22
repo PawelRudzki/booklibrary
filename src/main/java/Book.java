@@ -1,7 +1,6 @@
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -9,8 +8,8 @@ import java.util.Set;
 
 public class Book {
 
-    private String isbnNr;
-    private String name;
+    private String isbn;
+    private String title;
     private Set<Author> authors;
     private String publicationYear;
     private String publishingHouse;
@@ -18,7 +17,7 @@ public class Book {
 
     @Override
     public String toString(){
-        return isbnNr+" "+name+" "+publicationYear+" "+publishingHouse
+        return isbn +" "+ title +" "+publicationYear+" "+publishingHouse
                 +" "+bookCategory+" "+authors;
     }
 

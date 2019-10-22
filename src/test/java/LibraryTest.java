@@ -184,7 +184,7 @@ public class LibraryTest {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         //when
-        library.getLibraryWarehouse().get(0).setBorrrowDate(simpleDateFormat.parse("2011-01-22"));
+        library.getLibraryWarehouse().get(0).setBorrowDate(simpleDateFormat.parse("2011-01-22"));
         customer.giveBackBook(library, customer.getBooksBorrowedList().get(0));
         customer.borrowBook(library, library.getLibraryWarehouse().get(2));
 
@@ -219,9 +219,9 @@ public class LibraryTest {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         //when
-        library.getLibraryWarehouse().get(0).setBorrrowDate(simpleDateFormat.parse("2018-01-22"));
-        library.getLibraryWarehouse().get(1).setBorrrowDate(simpleDateFormat.parse("2019-08-22"));
-        library.getLibraryWarehouse().get(2).setBorrrowDate(simpleDateFormat.parse("2017-08-22"));
+        library.getLibraryWarehouse().get(0).setBorrowDate(simpleDateFormat.parse("2018-01-22"));
+        library.getLibraryWarehouse().get(1).setBorrowDate(simpleDateFormat.parse("2019-08-22"));
+        library.getLibraryWarehouse().get(2).setBorrowDate(simpleDateFormat.parse("2017-08-22"));
         customer.giveBackBook(library, customer.getBooksBorrowedList().get(0));
         customer.giveBackBook(library, customer2.getBooksBorrowedList().get(0));
         customer.giveBackBook(library, customer3.getBooksBorrowedList().get(0));
