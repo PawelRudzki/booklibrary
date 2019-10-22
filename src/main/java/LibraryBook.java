@@ -1,5 +1,6 @@
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
@@ -7,6 +8,7 @@ import java.util.Date;
 @Setter
 @Getter
 @AllArgsConstructor
+
 public class LibraryBook extends LibraryTypes{
 
     private Book book;
@@ -15,6 +17,10 @@ public class LibraryBook extends LibraryTypes{
     private Date borrowDate;
     private Customer borrowedBy;
 
+
+    public LibraryBook(){
+        book = new Book();
+    }
     @Override
     public String toString(){
         return book+" "+ id +" "+singleBorrowingDuration

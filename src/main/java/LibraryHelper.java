@@ -92,7 +92,7 @@ public class LibraryHelper<T extends LibraryTypes> {
                 if (libraryBook.getBorrowDate() != null) {
                     streamWriter.writeCharacters(libraryBook.getBorrowDate().toString());
                 } else {
-                    streamWriter.writeCharacters("-------------");
+                    streamWriter.writeCharacters("0");
                 }
                 streamWriter.writeEndElement();
 
@@ -100,7 +100,7 @@ public class LibraryHelper<T extends LibraryTypes> {
                 if (libraryBook.getBorrowedBy() != null) {
                     streamWriter.writeCharacters(libraryBook.getBorrowedBy().toString());
                 } else {
-                    streamWriter.writeCharacters("-------------");
+                    streamWriter.writeCharacters("0");
                 }
                 streamWriter.writeEndElement();
             }

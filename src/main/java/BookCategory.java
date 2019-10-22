@@ -1,4 +1,5 @@
 public enum BookCategory {
+    OTHER,
     HISTORICAL,
     ELEMENTARY,
     DICTIONARY,

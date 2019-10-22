@@ -26,7 +26,7 @@ public class Customer extends LibraryTypes{
 
     @Override
     public String toString(){
-        return id +" "+name+" "+lastName+" "+accountBalance+" "+booksBorrowedList;
+        return id +" "+name+" "+lastName;
     }
 
 }
