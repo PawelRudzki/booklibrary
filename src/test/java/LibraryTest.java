@@ -1,5 +1,7 @@
 import org.junit.Test;
 
+import javax.xml.stream.XMLStreamException;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -195,7 +197,8 @@ public class LibraryTest {
     }
 
     @Test
-    public void getDebtRaportTest() throws ParseException {
+    public void createRaportOfBooksKeptTooLong() throws ParseException, IOException, XMLStreamException {
+
 
         //given
         BooksContainer booksContainer = new BooksContainer();
@@ -212,27 +215,27 @@ public class LibraryTest {
         library.addBook(booksContainer.getLibraryBook());
         library.addBook(booksContainer.getLibraryBook());
         library.addBook(booksContainer.getLibraryBook());
+
         customer.borrowBook(library, library.getLibraryWarehouse().get(0));
         customer2.borrowBook(library, library.getLibraryWarehouse().get(1));
         customer3.borrowBook(library, library.getLibraryWarehouse().get(2));
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-
-        //when
         library.getLibraryWarehouse().get(0).setBorrowDate(simpleDateFormat.parse("2018-01-22"));
         library.getLibraryWarehouse().get(1).setBorrowDate(simpleDateFormat.parse("2019-08-22"));
         library.getLibraryWarehouse().get(2).setBorrowDate(simpleDateFormat.parse("2017-08-22"));
         customer.giveBackBook(library, customer.getBooksBorrowedList().get(0));
-        customer.giveBackBook(library, customer2.getBooksBorrowedList().get(0));
-        customer.giveBackBook(library, customer3.getBooksBorrowedList().get(0));
-        library.getDebtRaport();
+
+
+        //when
+        library.createRaportOfBooksKeptTooLong();
 
         //then
 
     }
 
-
     @Test
     public void dateDifference() {
     }
+
 }

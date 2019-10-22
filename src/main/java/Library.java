@@ -1,6 +1,8 @@
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import javax.xml.stream.XMLStreamException;
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,27 +17,20 @@ public class Library {
 
     private final LibraryHelper libraryHelper = new LibraryHelper();
 
-    public void getDebtRaport() {
-        customerList
-                .stream()
-                .filter(a -> a.getAccountBalance() > 0)
-                .forEach(b -> System.out.println(b.toString() + " debt: " + b.getAccountBalance() + "zł"));
-
-        double debtValueTotal = customerList
-                .stream()
-                .mapToDouble(Customer::getAccountBalance)
-                .reduce(0, (subtotal, b) -> subtotal + b);
-        System.out.println("Total: " + debtValueTotal + "zł");
-    }
-
     public void lendBook(Customer customer, LibraryBook libraryBook) {
         LibraryHelper libraryHelper = new LibraryHelper();
+
+        //Is given customer ID in this library?
         if (!libraryHelper.isThisIdInGivenList(customer.getId(), this.getCustomerList())) {
             throw new IllegalArgumentException("This is not our customer!");
         }
+
+        //Is given customer penalty balance below limit?
         if (customer.getAccountBalance() > 20) {
             throw new IllegalStateException("You owe us a lot of money!");
         }
+
+        //Does given customer have less than 5 books from this library?
         List<LibraryBook> booksBorrowedByCustomer = libraryWarehouse
                 .stream()
                 .filter(b -> b.getBorrowedBy() != null)
@@ -44,9 +39,13 @@ public class Library {
         if (booksBorrowedByCustomer.size() > 5) {
             throw new IllegalStateException("Sorry, you have too many books from us already!");
         } else {
+
+            //Do we have requested book in this library?
             if (!libraryHelper.isThisIdInGivenList(libraryBook.getId(), this.getLibraryWarehouse())) {
                 throw new IllegalArgumentException("We don't have this book!");
             } else {
+
+                //Is requested book not borrowed at the moment?
                 LibraryBook bookToLend = libraryWarehouse
                         .stream()
                         .filter(a -> a.getId() == libraryBook.getId())
@@ -68,7 +67,7 @@ public class Library {
         if (!libraryHelper.isThisIdInGivenList(libraryBook.getId(), this.getLibraryWarehouse())) {
             throw new IllegalArgumentException("This book is not from our library.");
         } else {
-            long daysReturnedAfterDeadline = dateDifference(libraryBook.getBorrowDate());
+            long daysReturnedAfterDeadline = libraryHelper.dateDifferenceToNow(libraryBook.getBorrowDate());
             if (daysReturnedAfterDeadline > libraryBook.getSingleBorrowingDuration()) {
                 libraryBook.getBorrowedBy().setAccountBalance(
                         libraryBook.getBorrowedBy().getAccountBalance() + daysReturnedAfterDeadline * ONE_DAY_PENALTY);
@@ -79,11 +78,22 @@ public class Library {
 
     }
 
+    public void createRaportOfBooksKeptTooLong() throws IOException, XMLStreamException {
+        List<LibraryBook> raportBookList = libraryWarehouse
+                .stream()
+                .filter(b-> b.getBorrowDate() != null)
+                .filter(a -> libraryHelper.dateDifferenceToNow(a.getBorrowDate()) > a.getSingleBorrowingDuration())
+                .collect(Collectors.toList());
+        libraryHelper.createLibraryBooksRaport("keptBooks", raportBookList, true);
+
+    }
+
     public void addBook(LibraryBook newLibraryBook) {
         libraryHelper.add(newLibraryBook, this.getLibraryWarehouse());
     }
 
     public void removeBook(LibraryBook bookToRemove) {
+
         libraryHelper.remove(bookToRemove, this.getLibraryWarehouse());
     }
 
@@ -92,13 +102,8 @@ public class Library {
     }
 
     public void removeCustomer(Customer customer) {
-        libraryHelper.remove(customer, this.getCustomerList());
-    }
 
-    public static long dateDifference(Date date) {
-        Date currentDate = new Date();
-        long difference = Math.abs(currentDate.getTime() - date.getTime());
-        return difference / ((long) (1000 * 60 * 60 * 24));
+        libraryHelper.remove(customer, this.getCustomerList());
     }
 
 

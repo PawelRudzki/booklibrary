@@ -1,10 +1,8 @@
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
+import java.io.*;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,8 +34,17 @@ public class LibraryHelper<T extends LibraryTypes> {
         } else {
             throw new IllegalStateException("Can't remove element because it already exists.");
         }
-
     }
+
+    public long dateDifferenceToNow(Date date) {
+        Date currentDate = new Date();
+        long difference = Math.abs(currentDate.getTime() - date.getTime());
+        return difference / ((long) (1000 * 60 * 60 * 24));
+    }
+
+    //XML methods
+
+    //XML methods for Book objects
 
     public void writeBookListToXML(String outputFile, List<LibraryBook> bookList, Boolean writeBorrowingDetails) throws XMLStreamException, FileNotFoundException {
 
@@ -113,6 +120,19 @@ public class LibraryHelper<T extends LibraryTypes> {
 
         streamWriter.close();
     }
+
+    public void createLibraryBooksRaport(String raportName, List<LibraryBook> bookList, Boolean writeBorrowingDetails) throws IOException, XMLStreamException {
+        File file = new File(raportName + ".xml");
+        if (file.createNewFile()) {
+            writeBookListToXML(raportName + ".xml", bookList, writeBorrowingDetails);
+            System.out.println("Raport created successfully.");
+        } else {
+            System.out.println("Raport with this name already exists. Can't overwrite it.");
+        }
+    }
+
+    //XML methods for Customer objects
+
 
 }
 
