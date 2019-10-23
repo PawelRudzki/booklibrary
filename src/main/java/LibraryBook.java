@@ -23,7 +23,7 @@ public class LibraryBook extends LibraryTypes{
     }
     @Override
     public String toString(){
-        return book+" "+ id +" "+singleBorrowingDuration
+        return book+" ID: "+ id +" "+singleBorrowingDuration
                 +" "+ borrowDate +" "+borrowedBy;
     }
 

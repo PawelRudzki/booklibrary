@@ -7,6 +7,8 @@ import javax.xml.parsers.SAXParserFactory;
 import javax.xml.stream.XMLStreamException;
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +32,7 @@ public class LibraryHelperTest {
 
         //when
         libraryHelper.writeBookListToXML("writeBooksOutput.xml",
-                library.getLibraryWarehouse(),true);
+                library.getLibraryWarehouse(), true);
 
 
         //then
@@ -70,5 +72,25 @@ public class LibraryHelperTest {
         //then
 
         assertEquals(libraryInputBookList, libraryOutputBookList);
+    }
+
+    @Test
+    public void dateDifferenceToNow() throws ParseException {
+
+        //given
+        Library library = new Library(new ArrayList<>(), new ArrayList<>());
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+
+        //when
+        long result1 = library.getLibraryHelper().dateDifferenceToNow(simpleDateFormat.parse("2018-10-23"));
+        long result2 = library.getLibraryHelper().dateDifferenceToNow(simpleDateFormat.parse("2019-12-02"));
+        long result3 = library.getLibraryHelper().dateDifferenceToNow(simpleDateFormat.parse("2019-10-23"));
+
+        //then
+        assertEquals(365l, result1);
+        assertEquals(-39l, result2);
+        assertEquals(0l, result3);
+
     }
 }

@@ -1,7 +1,14 @@
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 import javax.xml.stream.XMLStreamException;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
@@ -75,16 +82,48 @@ public class Library {
             libraryBook.setBorrowedBy(null);
             libraryBook.setBorrowDate(null);
         }
+    }
 
+    public void addLibraryBooksFromXMl(String inputFile) throws ParserConfigurationException, SAXException, IOException {
+        SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+        SAXParser saxParser = saxParserFactory.newSAXParser();
+        LibraryBooksXMLHandler libraryBooksXMLHandler = new LibraryBooksXMLHandler();
+
+        try {
+            saxParser.parse(new File(inputFile + ".xml"), libraryBooksXMLHandler);
+        } catch (SAXParseException e) {
+            throw new IllegalArgumentException("Problem with input file. It's corrupted or empty.");
+        }
+        List<LibraryBook> tmpList = libraryBooksXMLHandler.getLibraryBookList();
+        if(tmpList.size()>0) {
+
+            //before adding any book to libraryWarehouse I get ride of temporary customer
+            // objects assigned to books by handler
+            for (LibraryBook libraryBook : tmpList) {
+                if (libraryBook.getBorrowedBy() != null) {
+                    int id = libraryBook.getBorrowedBy().getId();
+                    if (libraryHelper.isThisIdInGivenList(id, customerList)) {
+                        libraryBook.setBorrowedBy(customerList
+                                .stream()
+                                .filter(a -> a.getId() == id)
+                                .findAny()
+                                .orElse(null));
+                    }
+                }
+                addBook(libraryBook);
+            }
+        } else {
+            throw new IllegalArgumentException("No books found in input source.");
+        }
     }
 
     public void createRaportOfBooksKeptTooLong() throws IOException, XMLStreamException {
         List<LibraryBook> raportBookList = libraryWarehouse
                 .stream()
-                .filter(b-> b.getBorrowDate() != null)
+                .filter(b -> b.getBorrowDate() != null)
                 .filter(a -> libraryHelper.dateDifferenceToNow(a.getBorrowDate()) > a.getSingleBorrowingDuration())
                 .collect(Collectors.toList());
-        libraryHelper.createLibraryBooksRaport("keptBooks", raportBookList, true);
+        libraryHelper.createLibraryBooksRaport("Raport of kept books ", raportBookList, true);
 
     }
 
@@ -93,7 +132,6 @@ public class Library {
     }
 
     public void removeBook(LibraryBook bookToRemove) {
-
         libraryHelper.remove(bookToRemove, this.getLibraryWarehouse());
     }
 
@@ -102,9 +140,7 @@ public class Library {
     }
 
     public void removeCustomer(Customer customer) {
-
         libraryHelper.remove(customer, this.getCustomerList());
     }
-
 
 }

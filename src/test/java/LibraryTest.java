@@ -1,10 +1,16 @@
 import org.junit.Test;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 import javax.xml.stream.XMLStreamException;
+import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -215,20 +221,76 @@ public class LibraryTest {
         library.addBook(booksContainer.getLibraryBook());
         library.addBook(booksContainer.getLibraryBook());
         library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook());
 
         customer.borrowBook(library, library.getLibraryWarehouse().get(0));
-        customer2.borrowBook(library, library.getLibraryWarehouse().get(1));
-        customer3.borrowBook(library, library.getLibraryWarehouse().get(2));
+        customer.borrowBook(library, library.getLibraryWarehouse().get(1));
+        customer.borrowBook(library, library.getLibraryWarehouse().get(2));
+        customer.borrowBook(library, library.getLibraryWarehouse().get(3));
+        customer2.borrowBook(library, library.getLibraryWarehouse().get(4));
+        customer2.borrowBook(library, library.getLibraryWarehouse().get(5));
+        customer2.borrowBook(library, library.getLibraryWarehouse().get(6));
+        customer2.borrowBook(library, library.getLibraryWarehouse().get(7));
+        customer3.borrowBook(library, library.getLibraryWarehouse().get(8));
+        customer3.borrowBook(library, library.getLibraryWarehouse().get(9));
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        library.getLibraryWarehouse().get(0).setBorrowDate(simpleDateFormat.parse("2018-01-22"));
-        library.getLibraryWarehouse().get(1).setBorrowDate(simpleDateFormat.parse("2019-08-22"));
-        library.getLibraryWarehouse().get(2).setBorrowDate(simpleDateFormat.parse("2017-08-22"));
-        customer.giveBackBook(library, customer.getBooksBorrowedList().get(0));
+        library.getLibraryWarehouse().get(0).setBorrowDate(simpleDateFormat.parse("2018-01-02"));
+        library.getLibraryWarehouse().get(1).setBorrowDate(simpleDateFormat.parse("2019-02-22"));
+        library.getLibraryWarehouse().get(2).setBorrowDate(simpleDateFormat.parse("2018-03-21"));
+        library.getLibraryWarehouse().get(3).setBorrowDate(simpleDateFormat.parse("2018-05-22"));
+        library.getLibraryWarehouse().get(4).setBorrowDate(simpleDateFormat.parse("2018-06-25"));
+        library.getLibraryWarehouse().get(5).setBorrowDate(simpleDateFormat.parse("2018-08-15"));
+        library.getLibraryWarehouse().get(6).setBorrowDate(simpleDateFormat.parse("2019-10-14"));
+        library.getLibraryWarehouse().get(7).setBorrowDate(simpleDateFormat.parse("2019-10-15"));
+        library.getLibraryWarehouse().get(8).setBorrowDate(simpleDateFormat.parse("2018-10-12"));
+        library.getLibraryWarehouse().get(9).setBorrowDate(simpleDateFormat.parse("2019-10-20"));
 
 
         //when
         library.createRaportOfBooksKeptTooLong();
+
+        //then
+
+    }
+
+
+    @Test
+    public void addLibraryBooksFromXMlTest() throws ParserConfigurationException, SAXException, IOException {
+
+        //given
+        Library library = new Library(new ArrayList<>(), new ArrayList<>());
+
+        //when
+        library.addLibraryBooksFromXMl("writeBooksInput");
+
+
+        //then
+//        for(LibraryBook libraryBook : library.getLibraryWarehouse()){
+//            System.out.println(libraryBook);
+//        }
+
+        assertEquals(4, library.getLibraryWarehouse().size());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void addLibraryBooksFromXMlEmptyListTest() throws ParserConfigurationException, SAXException, IOException {
+
+        //given
+        Library library = new Library(new ArrayList<>(), new ArrayList<>());
+
+        //when
+        library.addLibraryBooksFromXMl("emptyFile");
 
         //then
 

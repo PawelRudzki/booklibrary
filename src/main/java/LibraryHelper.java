@@ -2,6 +2,7 @@ import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 import java.io.*;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -38,7 +39,7 @@ public class LibraryHelper<T extends LibraryTypes> {
 
     public long dateDifferenceToNow(Date date) {
         Date currentDate = new Date();
-        long difference = Math.abs(currentDate.getTime() - date.getTime());
+        long difference = currentDate.getTime() - date.getTime();
         return difference / ((long) (1000 * 60 * 60 * 24));
     }
 
@@ -47,6 +48,7 @@ public class LibraryHelper<T extends LibraryTypes> {
     //XML methods for Book objects
 
     public void writeBookListToXML(String outputFile, List<LibraryBook> bookList, Boolean writeBorrowingDetails) throws XMLStreamException, FileNotFoundException {
+
 
         OutputStream os = new FileOutputStream(new File(outputFile));
         XMLOutputFactory outputFactory = XMLOutputFactory.newFactory();
@@ -97,7 +99,8 @@ public class LibraryHelper<T extends LibraryTypes> {
 
                 streamWriter.writeStartElement("borrowDate");
                 if (libraryBook.getBorrowDate() != null) {
-                    streamWriter.writeCharacters(libraryBook.getBorrowDate().toString());
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+                    streamWriter.writeCharacters(simpleDateFormat.format(libraryBook.getBorrowDate()));
                 } else {
                     streamWriter.writeCharacters("0");
                 }
@@ -122,9 +125,10 @@ public class LibraryHelper<T extends LibraryTypes> {
     }
 
     public void createLibraryBooksRaport(String raportName, List<LibraryBook> bookList, Boolean writeBorrowingDetails) throws IOException, XMLStreamException {
-        File file = new File(raportName + ".xml");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy (HH_mm_ss)");
+        File file = new File(raportName + simpleDateFormat.format(new Date().getTime()) + ".xml");
         if (file.createNewFile()) {
-            writeBookListToXML(raportName + ".xml", bookList, writeBorrowingDetails);
+            writeBookListToXML(file.getCanonicalPath(), bookList, writeBorrowingDetails);
             System.out.println("Raport created successfully.");
         } else {
             System.out.println("Raport with this name already exists. Can't overwrite it.");
@@ -132,7 +136,6 @@ public class LibraryHelper<T extends LibraryTypes> {
     }
 
     //XML methods for Customer objects
-
 
 }
 
