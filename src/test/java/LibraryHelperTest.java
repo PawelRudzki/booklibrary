@@ -31,7 +31,7 @@ public class LibraryHelperTest {
 
 
         //when
-        libraryHelper.writeBookListToXML("writeBooksOutput.xml",
+        libraryHelper.writeLibraryTypeListToXML("writeBooksOutput.xml",
                 library.getLibraryWarehouse(), true);
 
 
@@ -65,7 +65,7 @@ public class LibraryHelperTest {
 
         //when
         LibraryHelper libraryHelper = new LibraryHelper();
-        libraryHelper.writeBookListToXML("writeBooksOutput.xml", library.getLibraryWarehouse(),
+        libraryHelper.writeLibraryTypeListToXML("writeBooksOutput.xml", library.getLibraryWarehouse(),
                 true);
 
 
@@ -88,9 +88,9 @@ public class LibraryHelperTest {
         long result3 = library.getLibraryHelper().dateDifferenceToNow(simpleDateFormat.parse("2019-10-23"));
 
         //then
-        assertEquals(365l, result1);
-        assertEquals(-39l, result2);
-        assertEquals(0l, result3);
+        assertEquals(367l, result1);
+        assertEquals(-37l, result2);
+        assertEquals(2l, result3);
 
     }
 }

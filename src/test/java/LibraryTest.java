@@ -2,15 +2,11 @@ import org.junit.Test;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
 import javax.xml.stream.XMLStreamException;
-import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -30,7 +26,7 @@ public class LibraryTest {
         customer.borrowBook(library, library.getLibraryWarehouse().get(0));
 
         //when
-        customer.giveBackBook(library, customer.getBooksBorrowedList().get(0));
+        customer.returnBook(library, customer.getBooksBorrowedList().get(0));
 
         //then
         assertEquals(1, customer.getBooksBorrowedList().size());
@@ -193,7 +189,7 @@ public class LibraryTest {
 
         //when
         library.getLibraryWarehouse().get(0).setBorrowDate(simpleDateFormat.parse("2011-01-22"));
-        customer.giveBackBook(library, customer.getBooksBorrowedList().get(0));
+        customer.returnBook(library, customer.getBooksBorrowedList().get(0));
         customer.borrowBook(library, library.getLibraryWarehouse().get(2));
 
 
@@ -203,66 +199,24 @@ public class LibraryTest {
     }
 
     @Test
-    public void createRaportOfBooksKeptTooLong() throws ParseException, IOException, XMLStreamException {
+    public void createAllRaports() throws IOException, XMLStreamException {
 
 
         //given
         BooksContainer booksContainer = new BooksContainer();
-
-        Customer customer = booksContainer.getCustomer();
-        Customer customer2 = booksContainer.getCustomer();
-        Customer customer3 = booksContainer.getCustomer();
-
-        Library library = new Library(new ArrayList<>(), new ArrayList<>());
-        library.addCustomer(customer);
-        library.addCustomer(customer2);
-        library.addCustomer(customer3);
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-
-        customer.borrowBook(library, library.getLibraryWarehouse().get(0));
-        customer.borrowBook(library, library.getLibraryWarehouse().get(1));
-        customer.borrowBook(library, library.getLibraryWarehouse().get(2));
-        customer.borrowBook(library, library.getLibraryWarehouse().get(3));
-        customer2.borrowBook(library, library.getLibraryWarehouse().get(4));
-        customer2.borrowBook(library, library.getLibraryWarehouse().get(5));
-        customer2.borrowBook(library, library.getLibraryWarehouse().get(6));
-        customer2.borrowBook(library, library.getLibraryWarehouse().get(7));
-        customer3.borrowBook(library, library.getLibraryWarehouse().get(8));
-        customer3.borrowBook(library, library.getLibraryWarehouse().get(9));
-
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        library.getLibraryWarehouse().get(0).setBorrowDate(simpleDateFormat.parse("2018-01-02"));
-        library.getLibraryWarehouse().get(1).setBorrowDate(simpleDateFormat.parse("2019-02-22"));
-        library.getLibraryWarehouse().get(2).setBorrowDate(simpleDateFormat.parse("2018-03-21"));
-        library.getLibraryWarehouse().get(3).setBorrowDate(simpleDateFormat.parse("2018-05-22"));
-        library.getLibraryWarehouse().get(4).setBorrowDate(simpleDateFormat.parse("2018-06-25"));
-        library.getLibraryWarehouse().get(5).setBorrowDate(simpleDateFormat.parse("2018-08-15"));
-        library.getLibraryWarehouse().get(6).setBorrowDate(simpleDateFormat.parse("2019-10-14"));
-        library.getLibraryWarehouse().get(7).setBorrowDate(simpleDateFormat.parse("2019-10-15"));
-        library.getLibraryWarehouse().get(8).setBorrowDate(simpleDateFormat.parse("2018-10-12"));
-        library.getLibraryWarehouse().get(9).setBorrowDate(simpleDateFormat.parse("2019-10-20"));
-
+        Library library = booksContainer.getLibraryWithBooksAndCustomers(1000, 200);
+        booksContainer.simulateUsageOfTheLibrary(library);
 
         //when
-        library.createRaportOfBooksKeptTooLong();
+        library.createBooksRaport("ABR");
+        library.createBooksRaport("KBR");
+        library.createCustomerRaport("ACR");
+        library.createCustomerRaport("NBCR");
 
         //then
 
     }
+
 
 
     @Test

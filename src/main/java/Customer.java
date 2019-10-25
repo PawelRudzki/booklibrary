@@ -2,12 +2,15 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamWriter;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 @Setter
 @Getter
 @AllArgsConstructor
-public class Customer extends LibraryTypes{
+public class Customer extends LibraryTypes {
 
     private int id;
     private String name;
@@ -15,18 +18,57 @@ public class Customer extends LibraryTypes{
     private List<LibraryBook> booksBorrowedList;
     private double accountBalance;
 
-    public void giveBackBook(Library library, LibraryBook libraryBook){
+
+    public void returnBook(Library library, LibraryBook libraryBook) {
         library.acceptBook(libraryBook);
     }
 
 
-    public void borrowBook(Library library, LibraryBook libraryBook){
+    public void borrowBook(Library library, LibraryBook libraryBook) {
         library.lendBook(this, libraryBook);
     }
 
-    @Override
-    public String toString(){
-        return id +" "+name+" "+lastName;
+
+    public void writeToXML(XMLStreamWriter streamWriter, boolean writeBorrowingDetails)
+            throws XMLStreamException {
+
+        streamWriter.writeStartElement("customer");
+        streamWriter.writeAttribute("id", String.valueOf(this.getId()));
+
+        streamWriter.writeStartElement("name");
+        streamWriter.writeCharacters(this.getName());
+        streamWriter.writeEndElement();
+
+        streamWriter.writeStartElement("lastName");
+        streamWriter.writeCharacters(this.getLastName());
+        streamWriter.writeEndElement();
+
+
+        if (writeBorrowingDetails) {
+
+            streamWriter.writeStartElement("accountBalance");
+            streamWriter.writeCharacters(String.valueOf(this.getAccountBalance()));
+            streamWriter.writeEndElement();
+
+            streamWriter.writeStartElement("borrowedBooks");
+            for (LibraryBook libraryBook : this.getBooksBorrowedList()) {
+                streamWriter.writeStartElement("id");
+                streamWriter.writeCharacters(String.valueOf(libraryBook.getId()));
+                streamWriter.writeEndElement();
+                streamWriter.writeStartElement("title");
+                streamWriter.writeCharacters(String.valueOf(libraryBook.getBook().getTitle()));
+                streamWriter.writeEndElement();
+            }
+            streamWriter.writeEndElement();
+        }
+        streamWriter.writeEndElement();
     }
+
+
+    @Override
+    public String toString() {
+        return id + " " + name + " " + lastName;
+    }
+
 
 }

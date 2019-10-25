@@ -45,9 +45,18 @@ public class LibraryHelper<T extends LibraryTypes> {
 
     //XML methods
 
-    //XML methods for Book objects
+    public void createLibraryTypeRaport(String raportName, List<T> bookList, boolean writeBorrowingDetails) throws IOException, XMLStreamException {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(" dd-MM-yyyy (HH_mm_ss)");
+        File file = new File(raportName + simpleDateFormat.format(new Date().getTime()) + ".xml");
+        if (file.createNewFile()) {
+            writeLibraryTypeListToXML(file.getCanonicalPath(), bookList, writeBorrowingDetails);
+            System.out.println("Raport created successfully.");
+        } else {
+            System.out.println("Raport with this name already exists. Can't overwrite it.");
+        }
+    }
 
-    public void writeBookListToXML(String outputFile, List<LibraryBook> bookList, Boolean writeBorrowingDetails) throws XMLStreamException, FileNotFoundException {
+    public void writeLibraryTypeListToXML(String outputFile, List<T> libraryTypeObjectsList, boolean writeBoorowingDetails) throws XMLStreamException, FileNotFoundException {
 
 
         OutputStream os = new FileOutputStream(new File(outputFile));
@@ -56,66 +65,10 @@ public class LibraryHelper<T extends LibraryTypes> {
 
 
         streamWriter.writeStartDocument("1.0");
-        streamWriter.writeStartElement("books");
+        streamWriter.writeStartElement("customers");
 
-        for (LibraryBook libraryBook : bookList) {
-
-            streamWriter.writeStartElement("libraryBook");
-            streamWriter.writeAttribute("id", String.valueOf(libraryBook.getId()));
-
-            streamWriter.writeStartElement("isbn");
-            streamWriter.writeCharacters(libraryBook.getBook().getIsbn());
-            streamWriter.writeEndElement();
-
-            streamWriter.writeStartElement("title");
-            streamWriter.writeCharacters(libraryBook.getBook().getTitle());
-            streamWriter.writeEndElement();
-
-            streamWriter.writeStartElement("authors");
-            for (Author author : libraryBook.getBook().getAuthors()) {
-                streamWriter.writeStartElement("author");
-                streamWriter.writeCharacters(author.toString());
-                streamWriter.writeEndElement();
-            }
-            streamWriter.writeEndElement();
-
-            streamWriter.writeStartElement("publicationYear");
-            streamWriter.writeCharacters(libraryBook.getBook().getPublicationYear());
-            streamWriter.writeEndElement();
-
-            streamWriter.writeStartElement("publishingHouse");
-            streamWriter.writeCharacters(libraryBook.getBook().getPublishingHouse());
-            streamWriter.writeEndElement();
-
-            streamWriter.writeStartElement("category");
-            streamWriter.writeCharacters(libraryBook.getBook().getBookCategory().toString());
-            streamWriter.writeEndElement();
-
-            if (writeBorrowingDetails) {
-
-                streamWriter.writeStartElement("singleBorrowingDuration");
-                streamWriter.writeCharacters(String.valueOf(libraryBook.getSingleBorrowingDuration()));
-                streamWriter.writeEndElement();
-
-                streamWriter.writeStartElement("borrowDate");
-                if (libraryBook.getBorrowDate() != null) {
-                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
-                    streamWriter.writeCharacters(simpleDateFormat.format(libraryBook.getBorrowDate()));
-                } else {
-                    streamWriter.writeCharacters("0");
-                }
-                streamWriter.writeEndElement();
-
-                streamWriter.writeStartElement("borrowedBy");
-                if (libraryBook.getBorrowedBy() != null) {
-                    streamWriter.writeCharacters(libraryBook.getBorrowedBy().toString());
-                } else {
-                    streamWriter.writeCharacters("0");
-                }
-                streamWriter.writeEndElement();
-            }
-
-            streamWriter.writeEndElement();
+        for(T libraryTypeObject : libraryTypeObjectsList){
+            libraryTypeObject.writeToXML(streamWriter, writeBoorowingDetails);
         }
 
         streamWriter.writeEndElement();
@@ -124,18 +77,6 @@ public class LibraryHelper<T extends LibraryTypes> {
         streamWriter.close();
     }
 
-    public void createLibraryBooksRaport(String raportName, List<LibraryBook> bookList, Boolean writeBorrowingDetails) throws IOException, XMLStreamException {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy (HH_mm_ss)");
-        File file = new File(raportName + simpleDateFormat.format(new Date().getTime()) + ".xml");
-        if (file.createNewFile()) {
-            writeBookListToXML(file.getCanonicalPath(), bookList, writeBorrowingDetails);
-            System.out.println("Raport created successfully.");
-        } else {
-            System.out.println("Raport with this name already exists. Can't overwrite it.");
-        }
-    }
-
-    //XML methods for Customer objects
 
 }
 
