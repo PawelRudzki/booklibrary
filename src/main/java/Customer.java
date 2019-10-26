@@ -47,7 +47,7 @@ public class Customer extends LibraryTypes {
         if (writeBorrowingDetails) {
 
             streamWriter.writeStartElement("accountBalance");
-            streamWriter.writeCharacters(String.valueOf(this.getAccountBalance()));
+            streamWriter.writeCharacters(String.format("%.2f", this.getAccountBalance()));
             streamWriter.writeEndElement();
 
             streamWriter.writeStartElement("borrowedBooks");

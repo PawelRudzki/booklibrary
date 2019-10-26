@@ -125,7 +125,7 @@ public class Library {
 
             //LibraryBooks raports
             case "ABR": {
-                libraryHelper.createLibraryTypeRaport("ALL BOOKS RAPORT", libraryWarehouse, false);
+                libraryHelper.createLibraryTypeRaport("ALL BOOKS RAPORT", libraryWarehouse, true);
                 break;
             }
             case "KBR": {
