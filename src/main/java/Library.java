@@ -83,7 +83,8 @@ public class Library {
         }
     }
 
-    public void addLibraryBooksFromXMl(String inputFile) throws ParserConfigurationException, SAXException, IOException {
+    public void loadLibraryBooksFromXML(String inputFile) throws ParserConfigurationException, SAXException, IOException {
+
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
         SAXParser saxParser = saxParserFactory.newSAXParser();
         LibraryBooksXMLHandler libraryBooksXMLHandler = new LibraryBooksXMLHandler();
@@ -97,7 +98,8 @@ public class Library {
         if (tmpList.size() > 0) {
 
             //before adding any book to libraryWarehouse I get ride of temporary customer
-            // objects assigned to books by handler
+            //objects assigned to books by handler and connect them with customers from
+            //customerSList of library
             for (LibraryBook libraryBook : tmpList) {
                 if (libraryBook.getBorrowedBy() != null) {
                     int id = libraryBook.getBorrowedBy().getId();
@@ -116,13 +118,14 @@ public class Library {
         }
     }
 
-    public void createBooksRaport(String raportType)
+    public void createLibraryTypeRaport(String raportType)
             throws IOException, XMLStreamException {
 
         switch (raportType) {
 
+            //LibraryBooks raports
             case "ABR": {
-                libraryHelper.createLibraryTypeRaport("ABR (ALL BOOKS RAPORT)", libraryWarehouse, false);
+                libraryHelper.createLibraryTypeRaport("ALL BOOKS RAPORT", libraryWarehouse, false);
                 break;
             }
             case "KBR": {
@@ -131,18 +134,13 @@ public class Library {
                         .filter(b -> b.getBorrowDate() != null)
                         .filter(a -> libraryHelper.dateDifferenceToNow(a.getBorrowDate()) > a.getSingleBorrowingDuration())
                         .collect(Collectors.toList());
-                libraryHelper.createLibraryTypeRaport("KBR (KEPT BOOKS RAPORT)", bookRaportList, true);
+                this.getLibraryHelper().createLibraryTypeRaport("KEPT BOOKS RAPORT", bookRaportList, true);
                 break;
             }
-        }
-    }
 
-    public void createCustomerRaport(String raportType)
-            throws IOException, XMLStreamException {
-
-        switch (raportType) {
+            //Customers raports
             case ("ACR"): {
-                getLibraryHelper().createLibraryTypeRaport("ACR (ALL CUSTOMERS RAPORT", customerList, false);
+                getLibraryHelper().createLibraryTypeRaport("ALL CUSTOMERS RAPORT", customerList, true);
                 break;
             }
             case ("NBCR"): {
@@ -150,7 +148,7 @@ public class Library {
                         .stream()
                         .filter(a -> a.getAccountBalance() > 0)
                         .collect(Collectors.toList());
-                getLibraryHelper().createLibraryTypeRaport("NBCR (NEGATIVE BALANCE CUSTOMER RAPORT", customerRaportList, true);
+                this.getLibraryHelper().createLibraryTypeRaport("NEGATIVE BALANCE CUSTOMER RAPORT", customerRaportList, true);
                 break;
             }
         }

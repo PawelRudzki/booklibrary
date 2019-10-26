@@ -7,5 +7,4 @@ public abstract class LibraryTypes {
 
     public abstract void writeToXML(XMLStreamWriter xmlStreamWriter, boolean writeBorrowingDetails)
     throws XMLStreamException;
-
 }

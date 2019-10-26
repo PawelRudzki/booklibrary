@@ -208,10 +208,10 @@ public class LibraryTest {
         booksContainer.simulateUsageOfTheLibrary(library);
 
         //when
-        library.createBooksRaport("ABR");
-        library.createBooksRaport("KBR");
-        library.createCustomerRaport("ACR");
-        library.createCustomerRaport("NBCR");
+        library.createLibraryTypeRaport("ABR");
+        library.createLibraryTypeRaport("KBR");
+        library.createLibraryTypeRaport("ACR");
+        library.createLibraryTypeRaport("NBCR");
 
         //then
 
@@ -226,7 +226,7 @@ public class LibraryTest {
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
 
         //when
-        library.addLibraryBooksFromXMl("writeBooksInput");
+        library.loadLibraryBooksFromXML("writeBooksInput");
 
 
         //then
@@ -244,7 +244,7 @@ public class LibraryTest {
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
 
         //when
-        library.addLibraryBooksFromXMl("emptyFile");
+        library.loadLibraryBooksFromXML("emptyFile");
 
         //then
 

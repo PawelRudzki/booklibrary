@@ -86,13 +86,13 @@ public class BooksContainer {
                 tmpCustomer.borrowBook(library, tmpBook);
 
                 //simulate previous borrowing to 100 days back in time
-                date.setTime(date.getTime() - generator.nextInt(100) * 86400000);
+                date.setTime(date.getTime() - generator.nextInt(30) * 86400000);
                 tmpBook.setBorrowDate(date);
             }
         }
 
         //simulate returns
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 300; i++) {
             tmpBook = library.getLibraryWarehouse()
                     .stream()
                     .filter(a -> a.getBorrowedBy() != null)
