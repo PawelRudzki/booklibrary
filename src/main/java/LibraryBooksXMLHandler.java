@@ -4,6 +4,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.sql.Date;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,6 @@ public class LibraryBooksXMLHandler extends DefaultHandler {
     private boolean bisbn = false;
     private boolean btitle = false;
     private boolean bauthor = false;
-    private boolean bclosingDate = false;
     private boolean bpublicationYear = false;
     private boolean bpublishingHouse = false;
     private boolean bcategory = false;
@@ -101,25 +101,30 @@ public class LibraryBooksXMLHandler extends DefaultHandler {
             bsingleBorrowingDuartion = false;
         }
         if (bborrowDate) {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            if (Integer.valueOf(String.valueOf(ch, start, length))!=0) {
-                tmpLibraryBook.setBorrowDate(Date.valueOf(String.valueOf(ch, start, length)));
-            } else{
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+            if (!String.valueOf(ch, start, length).equals("0")) {
+                try {
+                    tmpLibraryBook.setBorrowDate((simpleDateFormat.parse(String.valueOf(ch, start, length))));
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            } else {
                 tmpLibraryBook.setBorrowDate(null);
             }
             bborrowDate = false;
         }
         if (bborrowedBy) {
-            if (Integer.valueOf(String.valueOf(ch, start, length))!=0) {
+            if (!String.valueOf(ch, start, length).equals("0")) {
                 String[] tableOfCustomer = String.valueOf(ch, start, length).split(" ");
-            tmpLibraryBook.setBorrowedBy(new Customer(Integer.valueOf(tableOfCustomer[0]), tableOfCustomer[1],
-                    tableOfCustomer[2], new ArrayList<>(), 0.0));
-            } else{
+                tmpLibraryBook.setBorrowedBy(new Customer(Integer.valueOf(tableOfCustomer[0]),
+                        tableOfCustomer[1], tableOfCustomer[2], new ArrayList<>(), 0.0));
+            } else {
                 tmpLibraryBook.setBorrowedBy(null);
             }
             bborrowedBy = false;
         }
     }
+
 
     @Override
     public void endDocument() {

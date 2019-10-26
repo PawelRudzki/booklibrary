@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 @Getter
@@ -52,15 +53,10 @@ public class Library {
             } else {
 
                 //Is requested book not borrowed at the moment?
-                LibraryBook bookToLend = libraryWarehouse
-                        .stream()
-                        .filter(a -> a.getId() == libraryBook.getId())
-                        .findAny()
-                        .orElse(null);
-                if (bookToLend.getBorrowedBy() == null) {
-                    bookToLend.setBorrowedBy(customer);
-                    bookToLend.setBorrowDate(new Date());
-                    customer.getBooksBorrowedList().add(bookToLend);
+                if (libraryBook.getBorrowedBy() == null) {
+                    libraryBook.setBorrowedBy(customer);
+                    libraryBook.setBorrowDate(new Date());
+                    customer.getBooksBorrowedList().add(libraryBook);
                 } else {
                     throw new IllegalStateException("This book is already borrowed.");
                 }
@@ -152,6 +148,10 @@ public class Library {
                 break;
             }
         }
+    }
+
+    public int getNextLibraryBookId(){
+        return libraryWarehouse.size()+1;
     }
 
     public void addBook(LibraryBook newLibraryBook) {

@@ -4,7 +4,6 @@ import lombok.Setter;
 
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 @Setter
@@ -52,11 +51,9 @@ public class Customer extends LibraryTypes {
 
             streamWriter.writeStartElement("borrowedBooks");
             for (LibraryBook libraryBook : this.getBooksBorrowedList()) {
-                streamWriter.writeStartElement("id");
-                streamWriter.writeCharacters(String.valueOf(libraryBook.getId()));
-                streamWriter.writeEndElement();
-                streamWriter.writeStartElement("title");
-                streamWriter.writeCharacters(String.valueOf(libraryBook.getBook().getTitle()));
+                streamWriter.writeStartElement("borrowedBook");
+                streamWriter.writeCharacters(libraryBook.getId()
+                        + " " + libraryBook.getBook().getTitle());
                 streamWriter.writeEndElement();
             }
             streamWriter.writeEndElement();

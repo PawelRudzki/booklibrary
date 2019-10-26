@@ -14,7 +14,7 @@ public class CustomerTest {
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
         library.addCustomer(customer);
 
-        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook(library));
 
         //when
         customer.borrowBook(library, library.getLibraryWarehouse().get(0));
@@ -33,7 +33,7 @@ public class CustomerTest {
         Customer customer = booksContainer.getCustomer();
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
         library.addCustomer(customer);
-        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook(library));
         customer.borrowBook(library, library.getLibraryWarehouse().get(0));
 
         //when

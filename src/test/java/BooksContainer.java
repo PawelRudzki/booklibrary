@@ -43,9 +43,9 @@ public class BooksContainer {
         return new Book(isbn, title, authorList, yearOfPublication, publisher, bookCategory);
     }
 
-    public LibraryBook getLibraryBook() {
+    public LibraryBook getLibraryBook(Library library) {
         Book book = getBook();
-        return new LibraryBook(book, generator.nextInt(1000000) + 1000000,
+        return new LibraryBook(book, library.getNextLibraryBookId(),
                 14, null, null);
     }
 
@@ -57,19 +57,17 @@ public class BooksContainer {
                 (names[generator.nextInt(6)]), lastNames[generator.nextInt(6)], new ArrayList<>(), 0);
     }
 
-    public Library getLibraryWithBooksAndCustomers(int numberOfBooks, int numberOfCustomers) {
-        List<LibraryBook> libraryBookList = new ArrayList<>();
-        List<Customer> customerList = new ArrayList<>();
+    public Library getLibraryWithBooksAndCustomers(Library library, int numberOfBooks, int numberOfCustomers) {
 
         for (int i = 0; i < numberOfBooks; i++) {
-            libraryBookList.add(getLibraryBook());
+            library.getLibraryWarehouse().add(getLibraryBook(library));
         }
 
         for (int i = 0; i < numberOfCustomers; i++) {
-            customerList.add(getCustomer());
+            library.getCustomerList().add(getCustomer());
         }
 
-        return new Library(libraryBookList, customerList);
+        return library;
     }
 
     public void simulateUsageOfTheLibrary(Library library) {
@@ -84,7 +82,7 @@ public class BooksContainer {
             tmpBook = library.getLibraryWarehouse().get(generator.nextInt(library.getLibraryWarehouse().size()));
             tmpCustomer = library.getCustomerList().get(generator.nextInt(library.getCustomerList().size()));
 
-            if (tmpBook.getBorrowedBy() == null && tmpCustomer.getBooksBorrowedList().size() < 4) {
+            if ((tmpBook.getBorrowedBy() == null) && (tmpCustomer.getBooksBorrowedList().size() < 5)) {
                 tmpCustomer.borrowBook(library, tmpBook);
 
                 //simulate previous borrowing to 30 days back in time

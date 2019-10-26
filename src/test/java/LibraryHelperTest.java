@@ -24,9 +24,12 @@ public class LibraryHelperTest {
         BooksContainer booksContainer = new BooksContainer();
 
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook(library));
+        library.addBook(booksContainer.getLibraryBook(library));
+        library.addBook(booksContainer.getLibraryBook(library));
+        library.addBook(booksContainer.getLibraryBook(library));
+
+
         LibraryHelper libraryHelper = new LibraryHelper();
 
 
@@ -45,9 +48,12 @@ public class LibraryHelperTest {
         BooksContainer booksContainer = new BooksContainer();
 
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
-        library.addBook(booksContainer.getLibraryBook());
+        library.addBook(booksContainer.getLibraryBook(library));
+        library.addBook(booksContainer.getLibraryBook(library));
+        library.addBook(booksContainer.getLibraryBook(library));
+        library.addBook(booksContainer.getLibraryBook(library));
+
+
 
 
         //load books from xml
