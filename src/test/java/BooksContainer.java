@@ -46,7 +46,7 @@ public class BooksContainer {
     public LibraryBook getLibraryBook(Library library) {
         Book book = getBook();
         return new LibraryBook(book, library.getNextLibraryBookId(),
-                14, null, null);
+                14, null, 0);
     }
 
     public Customer getCustomer(Library library) {
@@ -82,7 +82,7 @@ public class BooksContainer {
             tmpBook = library.getLibraryWarehouse().get(generator.nextInt(library.getLibraryWarehouse().size()));
             tmpCustomer = library.getCustomerList().get(generator.nextInt(library.getCustomerList().size()));
 
-            if ((tmpBook.getBorrowedBy() == null) && (tmpCustomer.getBooksBorrowedList().size() < 5)) {
+            if ((tmpBook.getBorrowedBy() == 0) && (tmpCustomer.getBooksBorrowedList().size() < 5)) {
                 tmpCustomer.borrowBook(library, tmpBook);
 
                 //simulate previous borrowing to 30 days back in time
@@ -95,11 +95,13 @@ public class BooksContainer {
         for (int i = 0; i < 300; i++) {
             tmpBook = library.getLibraryWarehouse()
                     .stream()
-                    .filter(a -> a.getBorrowedBy() != null)
+                    .filter(a -> a.getBorrowedBy() != 0)
                     .findFirst()
                     .orElse(null);
             if (tmpBook != null) {
-                tmpBook.getBorrowedBy().returnBook(library, tmpBook);
+                library.getLibraryHelper()
+                        .returnLibraryTypeOfGivenID(tmpBook.getBorrowedBy(), library.getCustomerList())
+                        .returnBook(library, tmpBook);
             } else {
                 break;
             }

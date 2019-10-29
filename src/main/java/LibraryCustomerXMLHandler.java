@@ -81,7 +81,7 @@ public class LibraryCustomerXMLHandler extends DefaultHandler {
                 System.out.println(arrEl);
             }
             tmpCustomer.getBooksBorrowedList().add(new LibraryBook(null,
-                    Integer.valueOf(tableOfLibraryBooks[0]), 0, null, null));
+                    Integer.valueOf(tableOfLibraryBooks[0]), 0, null, 0));
             bborrowedBook = false;
 
         }

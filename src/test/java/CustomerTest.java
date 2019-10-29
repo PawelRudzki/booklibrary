@@ -20,12 +20,12 @@ public class CustomerTest {
         customer.borrowBook(library, library.getLibraryWarehouse().get(0));
 
         //then
-        assertEquals(customer, library.getLibraryWarehouse().get(0).getBorrowedBy());
+        assertEquals(customer.getId(), library.getLibraryWarehouse().get(0).getBorrowedBy());
     }
 
 
     @Test
-    public void giveBackBook() {
+    public void returnBookTest() {
 
         //given
         BooksContainer booksContainer = new BooksContainer();
@@ -40,7 +40,7 @@ public class CustomerTest {
         customer.returnBook(library, library.getLibraryWarehouse().get(0));
 
         //then
-        assertEquals(null, library.getLibraryWarehouse().get(0).getBorrowedBy());
+        assertEquals(0, library.getLibraryWarehouse().get(0).getBorrowedBy());
         assertEquals(1, customer.getBooksBorrowedList().size());
     }
 

@@ -21,6 +21,18 @@ public class LibraryHelper<T extends LibraryTypes> {
         }
     }
 
+    public Customer returnLibraryTypeOfGivenID(int id, List<Customer> list) {
+        Optional<Customer> exists = list
+                .stream()
+                .filter(a -> a.getId() == id)
+                .findAny();
+        if (!exists.isPresent()) {
+            return null;
+        } else {
+            return exists.get();
+        }
+    }
+
     public void add(T libraryType, List<T> list) {
         if (!isThisIdInGivenList(libraryType.getId(), list)) {
             list.add(libraryType);

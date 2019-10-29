@@ -40,8 +40,8 @@ public class Library {
         //Does given customer have less than 5 books from this library?
         List<LibraryBook> booksBorrowedByCustomer = libraryWarehouse
                 .stream()
-                .filter(b -> b.getBorrowedBy() != null)
-                .filter(a -> a.getBorrowedBy().getId() == customer.getId())
+                .filter(b -> b.getBorrowedBy() != 0)
+                .filter(a -> a.getBorrowedBy() == customer.getId())
                 .collect(Collectors.toList());
         if (booksBorrowedByCustomer.size() > 5) {
             throw new IllegalStateException("Sorry, you have too many books from us already!");
@@ -53,8 +53,8 @@ public class Library {
             } else {
 
                 //Is requested book not borrowed at the moment?
-                if (libraryBook.getBorrowedBy() == null) {
-                    libraryBook.setBorrowedBy(customer);
+                if (libraryBook.getBorrowedBy() == 0) {
+                    libraryBook.setBorrowedBy(customer.getId());
                     libraryBook.setBorrowDate(new Date());
                     customer.getBooksBorrowedList().add(libraryBook);
                 } else {
@@ -71,10 +71,11 @@ public class Library {
         } else {
             long daysReturnedAfterDeadline = libraryHelper.dateDifferenceToNow(libraryBook.getBorrowDate());
             if (daysReturnedAfterDeadline > libraryBook.getSingleBorrowingDuration()) {
-                libraryBook.getBorrowedBy().setAccountBalance(
-                        libraryBook.getBorrowedBy().getAccountBalance() + daysReturnedAfterDeadline * ONE_DAY_PENALTY);
+                Customer tmpCustomer = libraryHelper.returnLibraryTypeOfGivenID(libraryBook.getBorrowedBy(), this.customerList);
+                tmpCustomer.setAccountBalance(
+                        tmpCustomer.getAccountBalance() + daysReturnedAfterDeadline * ONE_DAY_PENALTY);
             }
-            libraryBook.setBorrowedBy(null);
+            libraryBook.setBorrowedBy(0);
             libraryBook.setBorrowDate(null);
         }
     }
@@ -92,21 +93,7 @@ public class Library {
         }
         List<LibraryBook> tmpList = libraryBooksXMLHandler.getLibraryBookList();
         if (tmpList.size() > 0) {
-
-            //before adding any book to libraryWarehouse I get ride of temporary customer
-            //objects assigned to books by handler and connect them with customers from
-            //customerSList of library
             for (LibraryBook libraryBook : tmpList) {
-                if (libraryBook.getBorrowedBy() != null) {
-                    int id = libraryBook.getBorrowedBy().getId();
-                    if (libraryHelper.isThisIdInGivenList(id, customerList)) {
-                        libraryBook.setBorrowedBy(customerList
-                                .stream()
-                                .filter(a -> a.getId() == id)
-                                .findAny()
-                                .orElse(null));
-                    }
-                }
                 addBook(libraryBook);
             }
         } else {

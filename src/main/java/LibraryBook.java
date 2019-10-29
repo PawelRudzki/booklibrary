@@ -1,6 +1,5 @@
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.xml.stream.XMLStreamException;
@@ -17,7 +16,7 @@ public class LibraryBook extends LibraryTypes {
     private int id;
     private int singleBorrowingDuration;
     private Date borrowDate;
-    private Customer borrowedBy;
+    private int borrowedBy;
 
 
     public LibraryBook() {
@@ -80,8 +79,8 @@ public class LibraryBook extends LibraryTypes {
             streamWriter.writeEndElement();
 
             streamWriter.writeStartElement("borrowedBy");
-            if (this.getBorrowedBy() != null) {
-                streamWriter.writeCharacters(this.getBorrowedBy().toString());
+            if (this.getBorrowedBy() != 0) {
+                streamWriter.writeCharacters(String.valueOf(this.getBorrowedBy()));
             } else {
                 streamWriter.writeCharacters("0");
             }

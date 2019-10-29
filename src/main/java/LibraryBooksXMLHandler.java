@@ -116,10 +116,9 @@ public class LibraryBooksXMLHandler extends DefaultHandler {
         if (bborrowedBy) {
             if (!String.valueOf(ch, start, length).equals("0")) {
                 String[] tableOfCustomer = String.valueOf(ch, start, length).split(" ");
-                tmpLibraryBook.setBorrowedBy(new Customer(Integer.valueOf(tableOfCustomer[0]),
-                        tableOfCustomer[1], tableOfCustomer[2], new ArrayList<>(), 0.0));
+                tmpLibraryBook.setBorrowedBy(Integer.valueOf(tableOfCustomer[0]));
             } else {
-                tmpLibraryBook.setBorrowedBy(null);
+                tmpLibraryBook.setBorrowedBy(0);
             }
             bborrowedBy = false;
         }
