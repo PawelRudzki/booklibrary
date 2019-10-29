@@ -150,8 +150,22 @@ public class Library {
         }
     }
 
-    public int getNextLibraryBookId(){
-        return libraryWarehouse.size()+1;
+    public int getNextLibraryBookId() {
+        do {
+            int tmpId = libraryWarehouse.size() + 1;
+            if (!libraryHelper.isThisIdInGivenList(tmpId, libraryWarehouse)) {
+                return tmpId;
+            }
+        } while (true);
+    }
+
+    public int getNextCustomerId() {
+        do {
+            int tmpId = customerList.size() + 1;
+            if (!libraryHelper.isThisIdInGivenList(tmpId, customerList)) {
+                return tmpId;
+            }
+        } while (true);
     }
 
     public void addBook(LibraryBook newLibraryBook) {

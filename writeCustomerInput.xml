@@ -1,0 +1,2010 @@
+<?xml version="1.0"?>
+<customers>
+    <customer id="1">
+        <name>Agnieszka</name>
+        <lastName>Domański</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>583 UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="2">
+        <name>Adam</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>956 Sin</borrowedBook>
+            <borrowedBook>724 Trying New Abduction</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="3">
+        <name>Janusz</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>2,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>59 First</borrowedBook>
+            <borrowedBook>451 First Abduction</borrowedBook>
+            <borrowedBook>125 New Forgiveness</borrowedBook>
+            <borrowedBook>546 Horses Forgiveness</borrowedBook>
+            <borrowedBook>274 Abduction Sin</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="4">
+        <name>Agnieszka</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>693 New Never Money</borrowedBook>
+            <borrowedBook>367 Abduction</borrowedBook>
+            <borrowedBook>597 Nonsens Never</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="5">
+        <name>Adam</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>904 UFO Sin</borrowedBook>
+            <borrowedBook>139 Another Nuances</borrowedBook>
+            <borrowedBook>690 Money Never</borrowedBook>
+            <borrowedBook>450 Nuances Sin</borrowedBook>
+            <borrowedBook>748 UFO Another</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="6">
+        <name>Łukasz</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>346 Horses</borrowedBook>
+            <borrowedBook>582 Nonsens Horses</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="7">
+        <name>Adam</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>787 Another First First</borrowedBook>
+            <borrowedBook>742 Money Nuances</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="8">
+        <name>Monika</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>822 Abduction</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="9">
+        <name>Beata</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>850 Nuances New Never</borrowedBook>
+            <borrowedBook>672 Sin</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="10">
+        <name>Beata</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>599 Another Never</borrowedBook>
+            <borrowedBook>148 Forgiveness UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="11">
+        <name>Łukasz</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>577 Forgiveness Sin Sin</borrowedBook>
+            <borrowedBook>659 Horses</borrowedBook>
+            <borrowedBook>384 Money</borrowedBook>
+            <borrowedBook>368 Never</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="12">
+        <name>Monika</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>131 Sin Forgiveness</borrowedBook>
+            <borrowedBook>662 Trying Sin Abduction</borrowedBook>
+            <borrowedBook>931 Trying First</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="13">
+        <name>Łukasz</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>970 Never Another</borrowedBook>
+            <borrowedBook>449 Sin</borrowedBook>
+            <borrowedBook>697 Trying Nonsens Trying</borrowedBook>
+            <borrowedBook>899 New Money</borrowedBook>
+            <borrowedBook>986 Trying</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="14">
+        <name>Agnieszka</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>446 Trying UFO</borrowedBook>
+            <borrowedBook>578 Sin First</borrowedBook>
+            <borrowedBook>869 Another Nuances</borrowedBook>
+            <borrowedBook>875 Forgiveness Nonsens Forgiveness</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="15">
+        <name>Beata</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>56 Nonsens Another</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="16">
+        <name>Łukasz</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>227 New Trying</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="17">
+        <name>Monika</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>2,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>918 Money UFO New</borrowedBook>
+            <borrowedBook>478 Abduction</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="18">
+        <name>Janusz</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>3,50</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>260 Trying Sin</borrowedBook>
+            <borrowedBook>821 First Horses</borrowedBook>
+            <borrowedBook>782 Money New</borrowedBook>
+            <borrowedBook>229 UFO Nonsens New</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="19">
+        <name>Łukasz</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>3,50</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>82 Nonsens Forgiveness</borrowedBook>
+            <borrowedBook>94 UFO Sin Money</borrowedBook>
+            <borrowedBook>200 Abduction Trying</borrowedBook>
+            <borrowedBook>272 Money UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="20">
+        <name>Łukasz</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>993 First</borrowedBook>
+            <borrowedBook>958 UFO Money</borrowedBook>
+            <borrowedBook>422 Nuances Never</borrowedBook>
+            <borrowedBook>572 Forgiveness New</borrowedBook>
+            <borrowedBook>915 Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="21">
+        <name>Beata</name>
+        <lastName>Domański</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>1 UFO</borrowedBook>
+            <borrowedBook>273 UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="22">
+        <name>Beata</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>3,10</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>424 Sin</borrowedBook>
+            <borrowedBook>407 UFO UFO</borrowedBook>
+            <borrowedBook>935 Money Money Abduction</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="23">
+        <name>Agnieszka</name>
+        <lastName>Domański</lastName>
+        <accountBalance>4,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>134 Horses Never</borrowedBook>
+            <borrowedBook>421 Never New Nonsens</borrowedBook>
+            <borrowedBook>291 First New</borrowedBook>
+            <borrowedBook>63 Money UFO Nuances</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="24">
+        <name>Adam</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>1,90</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>182 Nuances Trying First</borrowedBook>
+            <borrowedBook>738 New UFO New</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="25">
+        <name>Agnieszka</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>143 First Money</borrowedBook>
+            <borrowedBook>971 New</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="26">
+        <name>Łukasz</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>1,90</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>64 UFO</borrowedBook>
+            <borrowedBook>718 Sin Horses</borrowedBook>
+            <borrowedBook>969 Nonsens</borrowedBook>
+            <borrowedBook>939 Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="27">
+        <name>Beata</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>2,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>618 New Sin Horses</borrowedBook>
+            <borrowedBook>755 Sin Never</borrowedBook>
+            <borrowedBook>628 Nonsens</borrowedBook>
+            <borrowedBook>741 UFO</borrowedBook>
+            <borrowedBook>222 Abduction</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="28">
+        <name>Łukasz</name>
+        <lastName>Domański</lastName>
+        <accountBalance>1,60</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>884 UFO Forgiveness</borrowedBook>
+            <borrowedBook>457 Nonsens Money Another</borrowedBook>
+            <borrowedBook>699 Nuances</borrowedBook>
+            <borrowedBook>440 First UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="29">
+        <name>Łukasz</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>566 Abduction Forgiveness UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="30">
+        <name>Łukasz</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>1,50</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>962 New UFO</borrowedBook>
+            <borrowedBook>332 Forgiveness Money Never</borrowedBook>
+            <borrowedBook>576 Sin Another</borrowedBook>
+            <borrowedBook>808 Money</borrowedBook>
+            <borrowedBook>283 Money Abduction</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="31">
+        <name>Beata</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>2,40</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>803 Forgiveness</borrowedBook>
+            <borrowedBook>36 Nuances Forgiveness</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="32">
+        <name>Agnieszka</name>
+        <lastName>Domański</lastName>
+        <accountBalance>3,90</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>976 First Never Horses</borrowedBook>
+            <borrowedBook>471 Never Never</borrowedBook>
+            <borrowedBook>961 Nuances Money Horses</borrowedBook>
+            <borrowedBook>417 First</borrowedBook>
+            <borrowedBook>701 Never</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="33">
+        <name>Łukasz</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>891 Trying</borrowedBook>
+            <borrowedBook>552 New Nonsens</borrowedBook>
+            <borrowedBook>721 Abduction Forgiveness New</borrowedBook>
+            <borrowedBook>214 Sin Nuances</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="34">
+        <name>Łukasz</name>
+        <lastName>Domański</lastName>
+        <accountBalance>2,10</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>79 Abduction Abduction Money</borrowedBook>
+            <borrowedBook>888 Sin Horses</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="35">
+        <name>Adam</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>1,70</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>529 Abduction</borrowedBook>
+            <borrowedBook>523 Money Trying</borrowedBook>
+            <borrowedBook>235 Trying</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="36">
+        <name>Monika</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>129 Forgiveness Never</borrowedBook>
+            <borrowedBook>413 Never UFO</borrowedBook>
+            <borrowedBook>8 UFO Trying UFO</borrowedBook>
+            <borrowedBook>757 New Nuances Forgiveness</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="37">
+        <name>Beata</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>972 Another</borrowedBook>
+            <borrowedBook>965 Never Nonsens</borrowedBook>
+            <borrowedBook>234 Abduction Trying Horses</borrowedBook>
+            <borrowedBook>308 Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="38">
+        <name>Adam</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>2,30</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>20 Nuances</borrowedBook>
+            <borrowedBook>361 New First First</borrowedBook>
+            <borrowedBook>728 Horses Nuances</borrowedBook>
+            <borrowedBook>645 Money Abduction</borrowedBook>
+            <borrowedBook>110 Never Forgiveness Nonsens</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="39">
+        <name>Agnieszka</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>416 Another</borrowedBook>
+            <borrowedBook>949 Forgiveness Trying</borrowedBook>
+            <borrowedBook>435 First First</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="40">
+        <name>Janusz</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>595 Trying</borrowedBook>
+            <borrowedBook>883 Trying Trying</borrowedBook>
+            <borrowedBook>391 Horses Horses Money</borrowedBook>
+            <borrowedBook>73 Horses Never Horses</borrowedBook>
+            <borrowedBook>112 Never</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="41">
+        <name>Agnieszka</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>1,50</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>666 Another New</borrowedBook>
+            <borrowedBook>531 Abduction UFO</borrowedBook>
+            <borrowedBook>342 Abduction</borrowedBook>
+            <borrowedBook>190 Abduction Money</borrowedBook>
+            <borrowedBook>379 New</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="42">
+        <name>Beata</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>1,80</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>189 Trying</borrowedBook>
+            <borrowedBook>22 UFO Forgiveness</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="43">
+        <name>Janusz</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>195 Nuances Sin</borrowedBook>
+            <borrowedBook>226 Abduction Abduction</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="44">
+        <name>Monika</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>335 New Never</borrowedBook>
+            <borrowedBook>481 Horses Sin</borrowedBook>
+            <borrowedBook>19 New UFO New</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="45">
+        <name>Beata</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>490 New</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="46">
+        <name>Łukasz</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>1,60</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>65 Nuances Nonsens Nonsens</borrowedBook>
+            <borrowedBook>926 Trying First</borrowedBook>
+            <borrowedBook>255 Horses</borrowedBook>
+            <borrowedBook>486 UFO</borrowedBook>
+            <borrowedBook>249 New Forgiveness</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="47">
+        <name>Beata</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>2,20</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>150 Nonsens Forgiveness Sin</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="48">
+        <name>Janusz</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>588 New</borrowedBook>
+            <borrowedBook>387 Abduction Another</borrowedBook>
+            <borrowedBook>115 New</borrowedBook>
+            <borrowedBook>118 Nonsens New First</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="49">
+        <name>Adam</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>2,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>127 Nonsens UFO</borrowedBook>
+            <borrowedBook>671 Another Horses</borrowedBook>
+            <borrowedBook>601 New Sin Horses</borrowedBook>
+            <borrowedBook>865 Sin First Horses</borrowedBook>
+            <borrowedBook>725 Another New</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="50">
+        <name>Adam</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>684 New Sin</borrowedBook>
+            <borrowedBook>820 Horses Trying</borrowedBook>
+            <borrowedBook>275 Horses</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="51">
+        <name>Janusz</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>2,30</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>57 Abduction Another</borrowedBook>
+            <borrowedBook>501 Another</borrowedBook>
+            <borrowedBook>25 Trying Another</borrowedBook>
+            <borrowedBook>444 Sin Nuances Never</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="52">
+        <name>Adam</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>758 Never Forgiveness Never</borrowedBook>
+            <borrowedBook>842 Nonsens Another UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="53">
+        <name>Adam</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>4,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>916 UFO</borrowedBook>
+            <borrowedBook>371 Another Horses</borrowedBook>
+            <borrowedBook>816 Nuances Sin Nuances</borrowedBook>
+            <borrowedBook>426 Never Another</borrowedBook>
+            <borrowedBook>201 First Money Nuances</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="54">
+        <name>Łukasz</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>431 Abduction</borrowedBook>
+            <borrowedBook>917 First New</borrowedBook>
+            <borrowedBook>107 Another Sin</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="55">
+        <name>Agnieszka</name>
+        <lastName>Domański</lastName>
+        <accountBalance>2,10</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>545 Trying UFO</borrowedBook>
+            <borrowedBook>121 Another Nonsens Never</borrowedBook>
+            <borrowedBook>840 Money Never</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="56">
+        <name>Adam</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>3,50</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>303 UFO</borrowedBook>
+            <borrowedBook>321 Money</borrowedBook>
+            <borrowedBook>370 Forgiveness</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="57">
+        <name>Agnieszka</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>2,30</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>544 Trying First</borrowedBook>
+            <borrowedBook>740 Nuances Nuances</borrowedBook>
+            <borrowedBook>293 Sin</borrowedBook>
+            <borrowedBook>944 Abduction Nonsens</borrowedBook>
+            <borrowedBook>168 Sin Abduction UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="58">
+        <name>Agnieszka</name>
+        <lastName>Domański</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>705 Trying Nuances</borrowedBook>
+            <borrowedBook>119 Money</borrowedBook>
+            <borrowedBook>910 New</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="59">
+        <name>Agnieszka</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>536 Sin Nuances</borrowedBook>
+            <borrowedBook>498 Forgiveness Trying New</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="60">
+        <name>Adam</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>1,90</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>668 Never</borrowedBook>
+            <borrowedBook>180 First Nuances</borrowedBook>
+            <borrowedBook>516 Forgiveness UFO</borrowedBook>
+            <borrowedBook>4 Never New</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="61">
+        <name>Łukasz</name>
+        <lastName>Domański</lastName>
+        <accountBalance>1,70</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>233 Nuances New Abduction</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="62">
+        <name>Monika</name>
+        <lastName>Domański</lastName>
+        <accountBalance>4,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>71 First First Sin</borrowedBook>
+            <borrowedBook>629 Horses</borrowedBook>
+            <borrowedBook>123 Horses</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="63">
+        <name>Agnieszka</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>845 Sin First</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="64">
+        <name>Beata</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>905 Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="65">
+        <name>Beata</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>294 Nuances UFO Nonsens</borrowedBook>
+            <borrowedBook>743 Nuances</borrowedBook>
+            <borrowedBook>17 Nonsens</borrowedBook>
+            <borrowedBook>253 UFO Nuances Never</borrowedBook>
+            <borrowedBook>776 Never</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="66">
+        <name>Łukasz</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>1,50</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>218 Never Horses</borrowedBook>
+            <borrowedBook>815 UFO Abduction</borrowedBook>
+            <borrowedBook>104 Nonsens</borrowedBook>
+            <borrowedBook>476 Another Money Trying</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="67">
+        <name>Monika</name>
+        <lastName>Domański</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>920 Never Another</borrowedBook>
+            <borrowedBook>814 Forgiveness UFO UFO</borrowedBook>
+            <borrowedBook>494 UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="68">
+        <name>Łukasz</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>855 Sin Trying</borrowedBook>
+            <borrowedBook>925 UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="69">
+        <name>Janusz</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>376 Nonsens UFO Never</borrowedBook>
+            <borrowedBook>46 Never Nonsens</borrowedBook>
+            <borrowedBook>390 Never First Nonsens</borrowedBook>
+            <borrowedBook>977 Trying Another</borrowedBook>
+            <borrowedBook>224 UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="70">
+        <name>Łukasz</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>3,30</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>454 New</borrowedBook>
+            <borrowedBook>359 New Another</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="71">
+        <name>Adam</name>
+        <lastName>Domański</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks></borrowedBooks>
+    </customer>
+    <customer id="72">
+        <name>Adam</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>864 Abduction</borrowedBook>
+            <borrowedBook>954 Horses New</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="73">
+        <name>Janusz</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>2,30</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>459 UFO</borrowedBook>
+            <borrowedBook>250 Nuances Money</borrowedBook>
+            <borrowedBook>937 New Money Trying</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="74">
+        <name>Agnieszka</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>2,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>502 UFO Money</borrowedBook>
+            <borrowedBook>737 New Trying</borrowedBook>
+            <borrowedBook>484 UFO First First</borrowedBook>
+            <borrowedBook>448 Money</borrowedBook>
+            <borrowedBook>349 UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="75">
+        <name>Agnieszka</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>1,70</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>164 First Nonsens First</borrowedBook>
+            <borrowedBook>447 Horses</borrowedBook>
+            <borrowedBook>228 Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="76">
+        <name>Janusz</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>311 Money Never New</borrowedBook>
+            <borrowedBook>360 Never Another</borrowedBook>
+            <borrowedBook>792 Never Nuances Nuances</borrowedBook>
+            <borrowedBook>401 First</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="77">
+        <name>Agnieszka</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>759 UFO</borrowedBook>
+            <borrowedBook>428 Horses Never Horses</borrowedBook>
+            <borrowedBook>590 Trying</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="78">
+        <name>Łukasz</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>621 First UFO Money</borrowedBook>
+            <borrowedBook>652 Never</borrowedBook>
+            <borrowedBook>514 Horses Sin</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="79">
+        <name>Monika</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>2,20</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>353 First Never</borrowedBook>
+            <borrowedBook>198 Abduction Forgiveness</borrowedBook>
+            <borrowedBook>702 UFO</borrowedBook>
+            <borrowedBook>766 Trying Money UFO</borrowedBook>
+            <borrowedBook>49 First Never Sin</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="80">
+        <name>Beata</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>1,90</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>219 Never First</borrowedBook>
+            <borrowedBook>554 Horses Horses</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="81">
+        <name>Beata</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>2,40</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>296 Never</borrowedBook>
+            <borrowedBook>166 Forgiveness</borrowedBook>
+            <borrowedBook>895 Sin</borrowedBook>
+            <borrowedBook>664 Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="82">
+        <name>Adam</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>16 Abduction</borrowedBook>
+            <borrowedBook>97 Money</borrowedBook>
+            <borrowedBook>809 Another</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="83">
+        <name>Łukasz</name>
+        <lastName>Domański</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>178 Sin Sin</borrowedBook>
+            <borrowedBook>569 UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="84">
+        <name>Adam</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>1,90</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>713 Money</borrowedBook>
+            <borrowedBook>648 Nonsens</borrowedBook>
+            <borrowedBook>994 Nuances Nuances</borrowedBook>
+            <borrowedBook>348 Never Trying Nuances</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="85">
+        <name>Janusz</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>975 Another First</borrowedBook>
+            <borrowedBook>28 Horses</borrowedBook>
+            <borrowedBook>619 Money Trying</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="86">
+        <name>Agnieszka</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>244 Nuances</borrowedBook>
+            <borrowedBook>783 Money Never</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="87">
+        <name>Adam</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>322 Forgiveness Horses Money</borrowedBook>
+            <borrowedBook>67 Horses UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="88">
+        <name>Beata</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>2,40</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>968 Never</borrowedBook>
+            <borrowedBook>290 Never Horses</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="89">
+        <name>Beata</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>1,80</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>687 UFO</borrowedBook>
+            <borrowedBook>505 Another Another First</borrowedBook>
+            <borrowedBook>211 Nuances Nuances</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="90">
+        <name>Beata</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>3,70</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>745 First New Horses</borrowedBook>
+            <borrowedBook>72 Forgiveness</borrowedBook>
+            <borrowedBook>328 Nonsens</borrowedBook>
+            <borrowedBook>181 UFO Another Never</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="91">
+        <name>Adam</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>2,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>264 Forgiveness Another Trying</borrowedBook>
+            <borrowedBook>276 Money Trying</borrowedBook>
+            <borrowedBook>658 Trying Sin</borrowedBook>
+            <borrowedBook>764 Trying Horses</borrowedBook>
+            <borrowedBook>722 Horses Nuances</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="92">
+        <name>Monika</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>1,50</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>817 New Trying</borrowedBook>
+            <borrowedBook>780 Horses</borrowedBook>
+            <borrowedBook>257 Horses Nonsens</borrowedBook>
+            <borrowedBook>940 Money Never UFO</borrowedBook>
+            <borrowedBook>889 Trying Nonsens Trying</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="93">
+        <name>Janusz</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>477 UFO Horses Trying</borrowedBook>
+            <borrowedBook>258 Sin</borrowedBook>
+            <borrowedBook>61 Money Never</borrowedBook>
+            <borrowedBook>749 Never Trying</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="94">
+        <name>Janusz</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>2,10</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>913 Horses Never</borrowedBook>
+            <borrowedBook>363 Nuances First Horses</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="95">
+        <name>Janusz</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>1,60</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>630 Never Forgiveness</borrowedBook>
+            <borrowedBook>496 Another Trying</borrowedBook>
+            <borrowedBook>872 Nuances Trying</borrowedBook>
+            <borrowedBook>383 Sin</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="96">
+        <name>Adam</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>772 Money Horses</borrowedBook>
+            <borrowedBook>527 Never First Horses</borrowedBook>
+            <borrowedBook>45 Forgiveness Never First</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="97">
+        <name>Monika</name>
+        <lastName>Domański</lastName>
+        <accountBalance>6,30</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>563 New Another</borrowedBook>
+            <borrowedBook>606 Abduction</borrowedBook>
+            <borrowedBook>186 New Another</borrowedBook>
+            <borrowedBook>362 Abduction</borrowedBook>
+            <borrowedBook>437 New</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="98">
+        <name>Monika</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>691 Sin Horses</borrowedBook>
+            <borrowedBook>952 Never Sin</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="99">
+        <name>Agnieszka</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>679 Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="100">
+        <name>Adam</name>
+        <lastName>Domański</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>846 Nonsens</borrowedBook>
+            <borrowedBook>208 UFO</borrowedBook>
+            <borrowedBook>508 Nuances</borrowedBook>
+            <borrowedBook>221 New Nonsens Money</borrowedBook>
+            <borrowedBook>752 Horses Another Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="101">
+        <name>Agnieszka</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>2,20</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>47 Sin First</borrowedBook>
+            <borrowedBook>26 Horses Trying</borrowedBook>
+            <borrowedBook>942 New UFO</borrowedBook>
+            <borrowedBook>96 Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="102">
+        <name>Beata</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>580 Trying New Never</borrowedBook>
+            <borrowedBook>573 Nuances Abduction</borrowedBook>
+            <borrowedBook>269 First Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="103">
+        <name>Adam</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>95 Nonsens</borrowedBook>
+            <borrowedBook>341 Trying New New</borrowedBook>
+            <borrowedBook>302 Horses Forgiveness Trying</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="104">
+        <name>Adam</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>157 UFO Nuances</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="105">
+        <name>Beata</name>
+        <lastName>Domański</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>651 Sin</borrowedBook>
+            <borrowedBook>631 New</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="106">
+        <name>Adam</name>
+        <lastName>Domański</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>988 New</borrowedBook>
+            <borrowedBook>771 UFO Nonsens</borrowedBook>
+            <borrowedBook>286 First Another Trying</borrowedBook>
+            <borrowedBook>773 Never Sin Trying</borrowedBook>
+            <borrowedBook>714 New Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="107">
+        <name>Adam</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>800 Abduction</borrowedBook>
+            <borrowedBook>921 Forgiveness</borrowedBook>
+            <borrowedBook>810 Another Nuances</borrowedBook>
+            <borrowedBook>574 Horses Horses</borrowedBook>
+            <borrowedBook>707 Forgiveness Abduction</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="108">
+        <name>Agnieszka</name>
+        <lastName>Domański</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>930 Nonsens</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="109">
+        <name>Adam</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>761 Forgiveness Never</borrowedBook>
+            <borrowedBook>831 Another Trying Horses</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="110">
+        <name>Beata</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>2,40</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>192 First</borrowedBook>
+            <borrowedBook>700 Forgiveness UFO Nonsens</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="111">
+        <name>Adam</name>
+        <lastName>Domański</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>890 Never</borrowedBook>
+            <borrowedBook>685 First Another New</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="112">
+        <name>Beata</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>1,80</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>314 New</borrowedBook>
+            <borrowedBook>443 Abduction</borrowedBook>
+            <borrowedBook>624 Nuances</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="113">
+        <name>Adam</name>
+        <lastName>Domański</lastName>
+        <accountBalance>4,30</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>114 Horses UFO</borrowedBook>
+            <borrowedBook>650 Nonsens</borrowedBook>
+            <borrowedBook>351 Another</borrowedBook>
+            <borrowedBook>708 Another Money</borrowedBook>
+            <borrowedBook>892 Money Horses Sin</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="114">
+        <name>Monika</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>4,50</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>156 UFO Sin</borrowedBook>
+            <borrowedBook>408 Sin</borrowedBook>
+            <borrowedBook>171 Money Another</borrowedBook>
+            <borrowedBook>144 Sin Nuances</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="115">
+        <name>Adam</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>2,30</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>640 Never</borrowedBook>
+            <borrowedBook>13 Never First</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="116">
+        <name>Agnieszka</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>10 Nuances</borrowedBook>
+            <borrowedBook>475 Nonsens</borrowedBook>
+            <borrowedBook>837 Trying Trying</borrowedBook>
+            <borrowedBook>843 First UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="117">
+        <name>Beata</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>706 Abduction Nonsens</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="118">
+        <name>Agnieszka</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>2,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>175 New Abduction</borrowedBook>
+            <borrowedBook>278 Forgiveness Another UFO</borrowedBook>
+            <borrowedBook>397 Another Never</borrowedBook>
+            <borrowedBook>220 Nonsens</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="119">
+        <name>Łukasz</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>786 Money Nuances</borrowedBook>
+            <borrowedBook>358 Horses</borrowedBook>
+            <borrowedBook>470 Horses</borrowedBook>
+            <borrowedBook>507 Nonsens Sin</borrowedBook>
+            <borrowedBook>564 Horses Horses</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="120">
+        <name>Adam</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>2,30</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>277 Trying</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="121">
+        <name>Beata</name>
+        <lastName>Domański</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>754 New Never Abduction</borrowedBook>
+            <borrowedBook>627 Abduction Horses</borrowedBook>
+            <borrowedBook>463 Horses Forgiveness</borrowedBook>
+            <borrowedBook>468 Sin Forgiveness</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="122">
+        <name>Janusz</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>1,80</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>829 New Never</borrowedBook>
+            <borrowedBook>919 Horses First</borrowedBook>
+            <borrowedBook>106 Money New Nuances</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="123">
+        <name>Agnieszka</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>2,30</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>27 First</borrowedBook>
+            <borrowedBook>719 Forgiveness</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="124">
+        <name>Beata</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>3,30</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>525 UFO Trying</borrowedBook>
+            <borrowedBook>199 Forgiveness</borrowedBook>
+            <borrowedBook>24 New Another UFO</borrowedBook>
+            <borrowedBook>111 Sin</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="125">
+        <name>Beata</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>849 Trying Trying</borrowedBook>
+            <borrowedBook>386 Nuances Nonsens</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="126">
+        <name>Janusz</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>1,80</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>142 Sin Nonsens UFO</borrowedBook>
+            <borrowedBook>458 Sin</borrowedBook>
+            <borrowedBook>642 UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="127">
+        <name>Janusz</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>393 UFO Another</borrowedBook>
+            <borrowedBook>911 New UFO</borrowedBook>
+            <borrowedBook>441 Forgiveness</borrowedBook>
+            <borrowedBook>600 Nonsens</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="128">
+        <name>Janusz</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>876 Another Never</borrowedBook>
+            <borrowedBook>587 Forgiveness UFO</borrowedBook>
+            <borrowedBook>934 Money Forgiveness Never</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="129">
+        <name>Monika</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>622 Forgiveness Horses Abduction</borrowedBook>
+            <borrowedBook>210 Abduction</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="130">
+        <name>Beata</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>2,20</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>215 Another</borrowedBook>
+            <borrowedBook>887 Forgiveness</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="131">
+        <name>Agnieszka</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>997 Never Sin</borrowedBook>
+            <borrowedBook>135 Nonsens Horses</borrowedBook>
+            <borrowedBook>542 Never Horses</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="132">
+        <name>Janusz</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>4,30</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>861 New Trying</borrowedBook>
+            <borrowedBook>140 Nuances</borrowedBook>
+            <borrowedBook>356 UFO Trying Horses</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="133">
+        <name>Agnieszka</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>2,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>203 Sin Another</borrowedBook>
+            <borrowedBook>789 UFO Nonsens</borrowedBook>
+            <borrowedBook>643 Forgiveness Nonsens Forgiveness</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="134">
+        <name>Agnieszka</name>
+        <lastName>Domański</lastName>
+        <accountBalance>1,70</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>83 Money Another</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="135">
+        <name>Janusz</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>2,20</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>165 Nonsens First</borrowedBook>
+            <borrowedBook>149 Abduction Money</borrowedBook>
+            <borrowedBook>896 Nuances Forgiveness Forgiveness</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="136">
+        <name>Janusz</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>331 Abduction Abduction</borrowedBook>
+            <borrowedBook>838 Forgiveness Nonsens</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="137">
+        <name>Adam</name>
+        <lastName>Domański</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>839 Horses Trying Another</borrowedBook>
+            <borrowedBook>9 First Sin</borrowedBook>
+            <borrowedBook>1000 Trying Another</borrowedBook>
+            <borrowedBook>217 Nuances Another</borrowedBook>
+            <borrowedBook>948 UFO First</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="138">
+        <name>Monika</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>2,40</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>330 Another</borrowedBook>
+            <borrowedBook>420 UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="139">
+        <name>Monika</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks></borrowedBooks>
+    </customer>
+    <customer id="140">
+        <name>Beata</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>86 Nuances</borrowedBook>
+            <borrowedBook>405 Forgiveness Never</borrowedBook>
+            <borrowedBook>879 First Money Nuances</borrowedBook>
+            <borrowedBook>932 First First Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="141">
+        <name>Łukasz</name>
+        <lastName>Domański</lastName>
+        <accountBalance>1,60</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>433 Nuances Nuances Forgiveness</borrowedBook>
+            <borrowedBook>81 Money Horses</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="142">
+        <name>Janusz</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>561 Nuances</borrowedBook>
+            <borrowedBook>414 Sin Never</borrowedBook>
+            <borrowedBook>818 Another First Money</borrowedBook>
+            <borrowedBook>608 Never Nonsens</borrowedBook>
+            <borrowedBook>623 Abduction Horses</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="143">
+        <name>Adam</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks></borrowedBooks>
+    </customer>
+    <customer id="144">
+        <name>Adam</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>1,60</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>355 Money</borrowedBook>
+            <borrowedBook>109 Trying New</borrowedBook>
+            <borrowedBook>774 Nonsens</borrowedBook>
+            <borrowedBook>946 Sin</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="145">
+        <name>Janusz</name>
+        <lastName>Domański</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>998 Nuances Forgiveness</borrowedBook>
+            <borrowedBook>923 Another</borrowedBook>
+            <borrowedBook>3 New</borrowedBook>
+            <borrowedBook>532 Horses Nuances</borrowedBook>
+            <borrowedBook>901 First Another</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="146">
+        <name>Agnieszka</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>894 Sin</borrowedBook>
+            <borrowedBook>763 First Money</borrowedBook>
+            <borrowedBook>14 Nonsens</borrowedBook>
+            <borrowedBook>213 Nonsens Nuances UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="147">
+        <name>Beata</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>556 Nonsens Never Never</borrowedBook>
+            <borrowedBook>611 Sin Nuances</borrowedBook>
+            <borrowedBook>132 First</borrowedBook>
+            <borrowedBook>266 Money UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="148">
+        <name>Adam</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>852 Horses Nonsens</borrowedBook>
+            <borrowedBook>912 Another</borrowedBook>
+            <borrowedBook>637 Another Another Never</borrowedBook>
+            <borrowedBook>733 UFO Sin</borrowedBook>
+            <borrowedBook>369 Sin Trying</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="149">
+        <name>Łukasz</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>2,20</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>882 Nuances First</borrowedBook>
+            <borrowedBook>284 UFO Forgiveness</borrowedBook>
+            <borrowedBook>263 Abduction New</borrowedBook>
+            <borrowedBook>615 Never UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="150">
+        <name>Monika</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>3,70</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>442 UFO</borrowedBook>
+            <borrowedBook>378 Sin Sin Nuances</borrowedBook>
+            <borrowedBook>238 Horses UFO</borrowedBook>
+            <borrowedBook>323 UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="151">
+        <name>Monika</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>191 Sin Abduction</borrowedBook>
+            <borrowedBook>614 Never</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="152">
+        <name>Janusz</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>729 Another</borrowedBook>
+            <borrowedBook>406 UFO Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="153">
+        <name>Łukasz</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>4,30</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>412 Nuances</borrowedBook>
+            <borrowedBook>415 UFO Horses</borrowedBook>
+            <borrowedBook>11 New Sin</borrowedBook>
+            <borrowedBook>781 First Nonsens Abduction</borrowedBook>
+            <borrowedBook>804 Nonsens Trying</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="154">
+        <name>Beata</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>1,60</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>282 Forgiveness UFO Forgiveness</borrowedBook>
+            <borrowedBook>834 Horses</borrowedBook>
+            <borrowedBook>984 Money First Another</borrowedBook>
+            <borrowedBook>873 Nonsens Sin</borrowedBook>
+            <borrowedBook>670 First</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="155">
+        <name>Agnieszka</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>2,20</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>661 Sin Horses</borrowedBook>
+            <borrowedBook>989 UFO Another New</borrowedBook>
+            <borrowedBook>88 UFO</borrowedBook>
+            <borrowedBook>84 Never Nuances Never</borrowedBook>
+            <borrowedBook>512 Nonsens Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="156">
+        <name>Łukasz</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>7 Nonsens Abduction UFO</borrowedBook>
+            <borrowedBook>241 Another</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="157">
+        <name>Agnieszka</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>1,70</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>665 Trying Trying</borrowedBook>
+            <borrowedBook>245 Sin</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="158">
+        <name>Beata</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>147 Another Sin Trying</borrowedBook>
+            <borrowedBook>696 Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="159">
+        <name>Łukasz</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>2,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>673 Never Sin</borrowedBook>
+            <borrowedBook>489 Money Nuances Abduction</borrowedBook>
+            <borrowedBook>179 Never</borrowedBook>
+            <borrowedBook>21 Nonsens Abduction Forgiveness</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="160">
+        <name>Monika</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>1,80</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>411 Trying</borrowedBook>
+            <borrowedBook>794 Nonsens</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="161">
+        <name>Agnieszka</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>924 Nuances Abduction</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="162">
+        <name>Beata</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>209 Abduction New</borrowedBook>
+            <borrowedBook>775 First Forgiveness</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="163">
+        <name>Janusz</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>777 First</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="164">
+        <name>Beata</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>2,20</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>893 Money Money Forgiveness</borrowedBook>
+            <borrowedBook>945 Abduction Never</borrowedBook>
+            <borrowedBook>469 Never</borrowedBook>
+            <borrowedBook>732 First</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="165">
+        <name>Adam</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>607 Nuances Sin</borrowedBook>
+            <borrowedBook>389 Forgiveness Another</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="166">
+        <name>Łukasz</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>4,20</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>74 Money Money</borrowedBook>
+            <borrowedBook>141 Money Horses</borrowedBook>
+            <borrowedBook>34 New</borrowedBook>
+            <borrowedBook>154 Abduction</borrowedBook>
+            <borrowedBook>526 Forgiveness Nonsens</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="167">
+        <name>Beata</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>712 Money Never Forgiveness</borrowedBook>
+            <borrowedBook>795 Money Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="168">
+        <name>Adam</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>2,20</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>373 Never</borrowedBook>
+            <borrowedBook>495 Horses</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="169">
+        <name>Agnieszka</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>522 Trying</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="170">
+        <name>Janusz</name>
+        <lastName>Domański</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>504 Nuances</borrowedBook>
+            <borrowedBook>239 First Never</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="171">
+        <name>Łukasz</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>38 Sin</borrowedBook>
+            <borrowedBook>2 Money First Horses</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="172">
+        <name>Janusz</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>1,90</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>704 Nuances Abduction</borrowedBook>
+            <borrowedBook>120 UFO Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="173">
+        <name>Monika</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>3,70</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>236 UFO</borrowedBook>
+            <borrowedBook>300 Abduction Abduction</borrowedBook>
+            <borrowedBook>153 Trying Never Nuances</borrowedBook>
+            <borrowedBook>750 New Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="174">
+        <name>Agnieszka</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>813 Never</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="175">
+        <name>Monika</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>246 Nonsens UFO</borrowedBook>
+            <borrowedBook>39 Another</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="176">
+        <name>Agnieszka</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>807 Nonsens Nuances Trying</borrowedBook>
+            <borrowedBook>995 Forgiveness Nonsens</borrowedBook>
+            <borrowedBook>859 Another</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="177">
+        <name>Janusz</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>1,60</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>456 Trying First First</borrowedBook>
+            <borrowedBook>791 Forgiveness Money</borrowedBook>
+            <borrowedBook>689 Trying Forgiveness</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="178">
+        <name>Agnieszka</name>
+        <lastName>Malinowski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>609 UFO</borrowedBook>
+            <borrowedBook>790 Abduction First</borrowedBook>
+            <borrowedBook>735 Forgiveness</borrowedBook>
+            <borrowedBook>832 New Sin</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="179">
+        <name>Łukasz</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>1,80</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>365 Horses Sin Never</borrowedBook>
+            <borrowedBook>338 Money Money</borrowedBook>
+            <borrowedBook>585 Abduction</borrowedBook>
+            <borrowedBook>324 Forgiveness UFO</borrowedBook>
+            <borrowedBook>797 Nuances</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="180">
+        <name>Adam</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>270 Never Sin</borrowedBook>
+            <borrowedBook>30 UFO Nuances</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="181">
+        <name>Beata</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>2,30</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>205 Money Never</borrowedBook>
+            <borrowedBook>981 Never UFO</borrowedBook>
+            <borrowedBook>695 Another Abduction</borrowedBook>
+            <borrowedBook>113 Money Horses</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="182">
+        <name>Adam</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>1,60</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>473 Trying Abduction Horses</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="183">
+        <name>Adam</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>927 Another Another UFO</borrowedBook>
+            <borrowedBook>511 First New</borrowedBook>
+            <borrowedBook>297 Another Nonsens Forgiveness</borrowedBook>
+            <borrowedBook>399 Another First</borrowedBook>
+            <borrowedBook>483 Sin UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="184">
+        <name>Monika</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>6,30</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>485 Forgiveness New Trying</borrowedBook>
+            <borrowedBook>880 Sin New</borrowedBook>
+            <borrowedBook>43 Abduction</borrowedBook>
+            <borrowedBook>44 Abduction Another</borrowedBook>
+            <borrowedBook>172 First</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="185">
+        <name>Monika</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>2,30</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>897 Another</borrowedBook>
+            <borrowedBook>267 Nuances</borrowedBook>
+            <borrowedBook>177 New Sin</borrowedBook>
+            <borrowedBook>52 Horses Horses</borrowedBook>
+            <borrowedBook>409 Money Money UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="186">
+        <name>Łukasz</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>2,40</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>37 Another</borrowedBook>
+            <borrowedBook>138 Nuances</borrowedBook>
+            <borrowedBook>950 Nonsens</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="187">
+        <name>Agnieszka</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>3,80</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>847 Sin</borrowedBook>
+            <borrowedBook>12 Another Money</borrowedBook>
+            <borrowedBook>90 Horses</borrowedBook>
+            <borrowedBook>906 First New</borrowedBook>
+            <borrowedBook>327 Another</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="188">
+        <name>Agnieszka</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>1,90</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>163 Never Money</borrowedBook>
+            <borrowedBook>279 Another Abduction</borrowedBook>
+            <borrowedBook>306 Forgiveness New</borrowedBook>
+            <borrowedBook>836 Abduction Nonsens Nuances</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="189">
+        <name>Beata</name>
+        <lastName>Kowalski</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>364 Horses New</borrowedBook>
+            <borrowedBook>951 Nuances Forgiveness</borrowedBook>
+            <borrowedBook>938 First Sin</borrowedBook>
+            <borrowedBook>394 Horses UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="190">
+        <name>Adam</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>867 Horses Abduction</borrowedBook>
+            <borrowedBook>183 Trying Another Abduction</borrowedBook>
+            <borrowedBook>350 First</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="191">
+        <name>Monika</name>
+        <lastName>Domański</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>460 Nonsens</borrowedBook>
+            <borrowedBook>500 Sin Sin Horses</borrowedBook>
+            <borrowedBook>835 Nonsens Never</borrowedBook>
+            <borrowedBook>559 Nuances Abduction Horses</borrowedBook>
+            <borrowedBook>605 Money Forgiveness Forgiveness</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="192">
+        <name>Agnieszka</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>1,80</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>170 Another</borrowedBook>
+            <borrowedBook>155 UFO</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="193">
+        <name>Beata</name>
+        <lastName>Domański</lastName>
+        <accountBalance>1,80</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>232 New</borrowedBook>
+            <borrowedBook>298 Money</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="194">
+        <name>Agnieszka</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>980 New Money</borrowedBook>
+            <borrowedBook>688 Horses New</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="195">
+        <name>Janusz</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>1,70</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>285 Trying Another</borrowedBook>
+            <borrowedBook>91 Sin</borrowedBook>
+            <borrowedBook>982 Forgiveness</borrowedBook>
+            <borrowedBook>746 Forgiveness First</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="196">
+        <name>Adam</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks></borrowedBooks>
+    </customer>
+    <customer id="197">
+        <name>Agnieszka</name>
+        <lastName>Bredniak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>646 Trying Abduction</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="198">
+        <name>Adam</name>
+        <lastName>Nowak</lastName>
+        <accountBalance>0,00</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>862 Nonsens</borrowedBook>
+            <borrowedBook>292 Another Forgiveness Nuances</borrowedBook>
+            <borrowedBook>667 Horses Nuances</borrowedBook>
+            <borrowedBook>943 Abduction Never</borrowedBook>
+            <borrowedBook>230 Trying Forgiveness</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="199">
+        <name>Janusz</name>
+        <lastName>Kaleta</lastName>
+        <accountBalance>1,60</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>62 Trying Forgiveness Trying</borrowedBook>
+            <borrowedBook>825 First First</borrowedBook>
+        </borrowedBooks>
+    </customer>
+    <customer id="200">
+        <name>Janusz</name>
+        <lastName>Domański</lastName>
+        <accountBalance>2,30</accountBalance>
+        <borrowedBooks>
+            <borrowedBook>400 Nuances Trying Nonsens</borrowedBook>
+            <borrowedBook>160 Horses New</borrowedBook>
+            <borrowedBook>823 Forgiveness Abduction</borrowedBook>
+        </borrowedBooks>
+    </customer>
+</customers>

@@ -24,10 +24,9 @@ public class LibraryHelperTest {
         BooksContainer booksContainer = new BooksContainer();
 
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
+        for(int i=0; i<3;i++) {
+            library.addBook(booksContainer.getLibraryBook(library));
+        }
 
 
         LibraryHelper libraryHelper = new LibraryHelper();
@@ -48,13 +47,9 @@ public class LibraryHelperTest {
         BooksContainer booksContainer = new BooksContainer();
 
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-
-
-
+        for(int i=0; i<4;i++) {
+            library.addBook(booksContainer.getLibraryBook(library));
+        }
 
         //load books from xml
         SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -94,9 +89,9 @@ public class LibraryHelperTest {
         long result3 = library.getLibraryHelper().dateDifferenceToNow(simpleDateFormat.parse("2019-10-23"));
 
         //then
-        assertEquals(368l, result1);
-        assertEquals(-36l, result2);
-        assertEquals(3l, result3);
+        assertEquals(371l, result1);
+        assertEquals(-33l, result2);
+        assertEquals(6l, result3);
 
     }
 }

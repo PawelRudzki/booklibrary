@@ -9,9 +9,9 @@ public class CustomerTest {
     @Test
     public void borrowBook() {
         //given
-        BooksContainer booksContainer = new BooksContainer();
-        Customer customer = booksContainer.getCustomer();
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
+        BooksContainer booksContainer = new BooksContainer();
+        Customer customer = booksContainer.getCustomer(library);
         library.addCustomer(customer);
 
         library.addBook(booksContainer.getLibraryBook(library));
@@ -29,9 +29,8 @@ public class CustomerTest {
 
         //given
         BooksContainer booksContainer = new BooksContainer();
-
-        Customer customer = booksContainer.getCustomer();
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
+        Customer customer = booksContainer.getCustomer(library);
         library.addCustomer(customer);
         library.addBook(booksContainer.getLibraryBook(library));
         customer.borrowBook(library, library.getLibraryWarehouse().get(0));

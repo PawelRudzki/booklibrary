@@ -49,11 +49,11 @@ public class BooksContainer {
                 14, null, null);
     }
 
-    public Customer getCustomer() {
+    public Customer getCustomer(Library library) {
         Random generator = new Random();
         String[] names = new String[]{"Adam", "Monika", "Agnieszka", "Łukasz", "Beata", "Janusz", "Rafał"};
         String[] lastNames = new String[]{"Domański", "Nowak", "Kowalski", "Kaleta", "Bredniak", "Malinowski", "Janiak"};
-        return new Customer(generator.nextInt(1000000) + 1000000,
+        return new Customer(library.getNextCustomerId(),
                 (names[generator.nextInt(6)]), lastNames[generator.nextInt(6)], new ArrayList<>(), 0);
     }
 
@@ -64,7 +64,7 @@ public class BooksContainer {
         }
 
         for (int i = 0; i < numberOfCustomers; i++) {
-            library.getCustomerList().add(getCustomer());
+            library.getCustomerList().add(getCustomer(library));
         }
 
         return library;

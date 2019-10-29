@@ -18,9 +18,10 @@ public class LibraryTest {
         //given
         BooksContainer booksContainer = new BooksContainer();
 
-        Customer customer = booksContainer.getCustomer();
-
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
+
+        Customer customer = booksContainer.getCustomer(library);
+
         library.addCustomer(customer);
         library.addBook(booksContainer.getLibraryBook(library));
         customer.borrowBook(library, library.getLibraryWarehouse().get(0));
@@ -43,12 +44,9 @@ public class LibraryTest {
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
 
         //when
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-
+        for(int i=0; i<5;i++) {
+            library.addBook(booksContainer.getLibraryBook(library));
+        }
 
         //then
         assertEquals(5, library.getLibraryWarehouse().size());
@@ -61,12 +59,9 @@ public class LibraryTest {
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
 
         //when
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
+        for(int i=0; i<6;i++) {
+            library.addBook(booksContainer.getLibraryBook(library));
+        }
 
         library.removeBook(library.getLibraryWarehouse().get(4));
         library.removeBook(library.getLibraryWarehouse().get(3));
@@ -83,9 +78,9 @@ public class LibraryTest {
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
 
         //when
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
+        for(int i=0; i<6;i++) {
+            library.addBook(booksContainer.getLibraryBook(library));
+        }
         library.removeBook(booksContainer.getLibraryBook(library));
 
         //then
@@ -98,21 +93,27 @@ public class LibraryTest {
     public void addCustomer() {
 
         //given
-        BooksContainer booksContainer = new BooksContainer();
-        Customer customer = booksContainer.getCustomer();
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
+        BooksContainer booksContainer = new BooksContainer();
+        Customer customer = booksContainer.getCustomer(library);
+
         //when
+        library.addCustomer(customer);
+
+        //then
+        assertEquals(1, library.getCustomerList().size());
     }
 
     @Test
     public void removeCustomer() {
         //given
-        BooksContainer booksContainer = new BooksContainer();
-        Customer customer = booksContainer.getCustomer();
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
 
+        BooksContainer booksContainer = new BooksContainer();
+        Customer customer = booksContainer.getCustomer(library);
+
         //when
-        library.addCustomer(booksContainer.getCustomer());
+        library.addCustomer(booksContainer.getCustomer(library));
         library.removeCustomer(library.getCustomerList().get(0));
 
         //then
@@ -123,13 +124,14 @@ public class LibraryTest {
     @Test(expected = IllegalStateException.class)
     public void removeCustomerException() {
         //given
-        BooksContainer booksContainer = new BooksContainer();
-        Customer customer = booksContainer.getCustomer();
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
 
+        BooksContainer booksContainer = new BooksContainer();
+        Customer customer = booksContainer.getCustomer(library);
+
         //when
-        library.addCustomer(booksContainer.getCustomer());
-        library.removeCustomer(booksContainer.getCustomer());
+        library.addCustomer(booksContainer.getCustomer(library));
+        library.removeCustomer(booksContainer.getCustomer(library));
 
         //then
         assertEquals(0, library.getCustomerList().size());
@@ -140,23 +142,20 @@ public class LibraryTest {
     public void lendBookCustomerOverHundredDebt() {
 
         //given
-        BooksContainer booksContainer = new BooksContainer();
-
-        Customer customer = booksContainer.getCustomer();
-
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
+
+        BooksContainer booksContainer = new BooksContainer();
+        Customer customer = booksContainer.getCustomer(library);
+
         library.addCustomer(customer);
 
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
+        for(int i=0; i<6;i++) {
+            library.addBook(booksContainer.getLibraryBook(library));
+        }
 
-        customer.borrowBook(library, library.getLibraryWarehouse().get(0));
-        customer.borrowBook(library, library.getLibraryWarehouse().get(1));
-        customer.borrowBook(library, library.getLibraryWarehouse().get(2));
+        for(int i=0; i<3;i++) {
+            customer.borrowBook(library, library.getLibraryWarehouse().get(i));
+        }
 
 
         //when
@@ -173,17 +172,15 @@ public class LibraryTest {
     public void customerAccountOverTime() throws ParseException {
 
         //given
-        BooksContainer booksContainer = new BooksContainer();
-
-        Customer customer = booksContainer.getCustomer();
-
         Library library = new Library(new ArrayList<>(), new ArrayList<>());
+        BooksContainer booksContainer = new BooksContainer();
+        Customer customer = booksContainer.getCustomer(library);
+
         library.addCustomer(customer);
 
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
-        library.addBook(booksContainer.getLibraryBook(library));
+        for(int i=0; i<4;i++) {
+            library.addBook(booksContainer.getLibraryBook(library));
+        }
 
         customer.borrowBook(library, library.getLibraryWarehouse().get(0));
 
@@ -232,9 +229,9 @@ public class LibraryTest {
 
 
         //then
-        for (LibraryBook libraryBook : library.getLibraryWarehouse()) {
-            System.out.println(libraryBook);
-        }
+//        for (LibraryBook libraryBook : library.getLibraryWarehouse()) {
+//            System.out.println(libraryBook);
+//        }
 
         assertEquals(1000, library.getLibraryWarehouse().size());
     }

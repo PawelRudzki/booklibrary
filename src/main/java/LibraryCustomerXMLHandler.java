@@ -4,6 +4,8 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 
+import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +36,7 @@ public class LibraryCustomerXMLHandler extends DefaultHandler {
             customerList = new ArrayList<>();
         } else if (qName.equalsIgnoreCase("name")) {
             bname = true;
-        } else if (qName.equalsIgnoreCase("blastName")) {
+        } else if (qName.equalsIgnoreCase("lastName")) {
             blastName = true;
         } else if (qName.equalsIgnoreCase("accountBalance")) {
             baccountBalance = true;
@@ -64,14 +66,24 @@ public class LibraryCustomerXMLHandler extends DefaultHandler {
             blastName = false;
         }
         if (baccountBalance) {
-            tmpCustomer.setAccountBalance(Integer.valueOf(String.valueOf(ch, start, length)));
+            try {
+                tmpCustomer.setAccountBalance(DecimalFormat.getNumberInstance()
+                        .parse(String.valueOf(ch, start, length)).doubleValue());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
             baccountBalance = false;
         }
 
-        if(bborrowedBook){
+        if (bborrowedBook) {
             String[] tableOfLibraryBooks = String.valueOf(ch, start, length).split(" ");
+            for (String arrEl : tableOfLibraryBooks) {
+                System.out.println(arrEl);
+            }
             tmpCustomer.getBooksBorrowedList().add(new LibraryBook(null,
                     Integer.valueOf(tableOfLibraryBooks[0]), 0, null, null));
+            bborrowedBook = false;
+
         }
     }
 

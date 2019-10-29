@@ -27,14 +27,14 @@ public class LibraryBooksXMLHandlerTest {
         List<LibraryBook> libraryBookList = myHandler.getLibraryBookList();
 
         //display list, to be sure what it contains
-        for (LibraryBook libraryBook : libraryBookList) {
-            System.out.println(libraryBook);
-        }
+//        for (LibraryBook libraryBook : libraryBookList) {
+//            System.out.println(libraryBook);
+//        }
 
         //then
         assertNotNull(libraryBookList.get(0));
         assertEquals(1000, libraryBookList.size());
     }
 
-    }
+}
 
