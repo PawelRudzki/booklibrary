@@ -37,7 +37,7 @@ public class CustomerTest {
 
         //when
 
-        customer.returnBook(library, library.getLibraryWarehouse().get(0));
+        customer.returnBook(library, library.getLibraryWarehouse().get(0).getId());
 
         //then
         assertEquals(0, library.getLibraryWarehouse().get(0).getBorrowedBy());

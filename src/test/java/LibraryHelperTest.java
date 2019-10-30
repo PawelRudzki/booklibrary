@@ -89,9 +89,9 @@ public class LibraryHelperTest {
         long result3 = library.getLibraryHelper().dateDifferenceToNow(simpleDateFormat.parse("2019-10-23"));
 
         //then
-        assertEquals(371l, result1);
-        assertEquals(-33l, result2);
-        assertEquals(6l, result3);
+        assertEquals(372l, result1);
+        assertEquals(-32l, result2);
+        assertEquals(7l, result3);
 
     }
 }

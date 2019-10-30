@@ -11,7 +11,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
 import java.util.stream.Collectors;
 
 @Getter
@@ -21,11 +20,9 @@ public class Library {
     private final double ONE_DAY_PENALTY = 0.10;
     private List<LibraryBook> libraryWarehouse;
     private List<Customer> customerList;
-
     private final LibraryHelper libraryHelper = new LibraryHelper();
 
     public void lendBook(Customer customer, LibraryBook libraryBook) {
-        LibraryHelper libraryHelper = new LibraryHelper();
 
         //Is given customer ID in this library?
         if (!libraryHelper.isThisIdInGivenList(customer.getId(), this.getCustomerList())) {
@@ -56,7 +53,7 @@ public class Library {
                 if (libraryBook.getBorrowedBy() == 0) {
                     libraryBook.setBorrowedBy(customer.getId());
                     libraryBook.setBorrowDate(new Date());
-                    customer.getBooksBorrowedList().add(libraryBook);
+                    customer.getBooksBorrowedList().add(libraryBook.getId());
                 } else {
                     throw new IllegalStateException("This book is already borrowed.");
                 }
@@ -64,19 +61,20 @@ public class Library {
         }
     }
 
-    public void acceptBook(LibraryBook libraryBook) {
+    public void acceptBook(int libraryBookId) {
         LibraryHelper libraryHelper = new LibraryHelper();
-        if (!libraryHelper.isThisIdInGivenList(libraryBook.getId(), this.getLibraryWarehouse())) {
+        if (!libraryHelper.isThisIdInGivenList(libraryBookId, this.getLibraryWarehouse())) {
             throw new IllegalArgumentException("This book is not from our library.");
         } else {
-            long daysReturnedAfterDeadline = libraryHelper.dateDifferenceToNow(libraryBook.getBorrowDate());
-            if (daysReturnedAfterDeadline > libraryBook.getSingleBorrowingDuration()) {
-                Customer tmpCustomer = libraryHelper.returnLibraryTypeOfGivenID(libraryBook.getBorrowedBy(), this.customerList);
+            LibraryBook tmpLibraryBook = libraryHelper.returnLibraryBookWithGivenID(libraryBookId, this.libraryWarehouse);
+            long daysReturnedAfterDeadline = libraryHelper.dateDifferenceToNow(tmpLibraryBook.getBorrowDate());
+            if (daysReturnedAfterDeadline > tmpLibraryBook.getSingleBorrowingDuration()) {
+                Customer tmpCustomer = libraryHelper.returnCustomerWithGivenID(tmpLibraryBook.getBorrowedBy(), this.customerList);
                 tmpCustomer.setAccountBalance(
                         tmpCustomer.getAccountBalance() + daysReturnedAfterDeadline * ONE_DAY_PENALTY);
             }
-            libraryBook.setBorrowedBy(0);
-            libraryBook.setBorrowDate(null);
+            tmpLibraryBook.setBorrowedBy(0);
+            tmpLibraryBook.setBorrowDate(null);
         }
     }
 

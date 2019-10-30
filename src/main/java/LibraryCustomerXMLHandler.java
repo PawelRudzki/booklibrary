@@ -77,11 +77,7 @@ public class LibraryCustomerXMLHandler extends DefaultHandler {
 
         if (bborrowedBook) {
             String[] tableOfLibraryBooks = String.valueOf(ch, start, length).split(" ");
-            for (String arrEl : tableOfLibraryBooks) {
-                System.out.println(arrEl);
-            }
-            tmpCustomer.getBooksBorrowedList().add(new LibraryBook(null,
-                    Integer.valueOf(tableOfLibraryBooks[0]), 0, null, 0));
+            tmpCustomer.getBooksBorrowedList().add(Integer.valueOf(tableOfLibraryBooks[0]));
             bborrowedBook = false;
 
         }

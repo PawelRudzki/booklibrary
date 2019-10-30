@@ -100,8 +100,8 @@ public class BooksContainer {
                     .orElse(null);
             if (tmpBook != null) {
                 library.getLibraryHelper()
-                        .returnLibraryTypeOfGivenID(tmpBook.getBorrowedBy(), library.getCustomerList())
-                        .returnBook(library, tmpBook);
+                        .returnCustomerWithGivenID(tmpBook.getBorrowedBy(), library.getCustomerList())
+                        .returnBook(library, tmpBook.getId());
             } else {
                 break;
             }

@@ -14,12 +14,12 @@ public class Customer extends LibraryTypes {
     private int id;
     private String name;
     private String lastName;
-    private List<LibraryBook> booksBorrowedList;
+    private List<Integer> booksBorrowedList;
     private double accountBalance;
 
 
-    public void returnBook(Library library, LibraryBook libraryBook) {
-        library.acceptBook(libraryBook);
+    public void returnBook(Library library, int libraryBookId) {
+        library.acceptBook(libraryBookId);
     }
 
 
@@ -50,10 +50,9 @@ public class Customer extends LibraryTypes {
             streamWriter.writeEndElement();
 
             streamWriter.writeStartElement("borrowedBooks");
-            for (LibraryBook libraryBook : this.getBooksBorrowedList()) {
+            for (int libraryBookId: this.getBooksBorrowedList()) {
                 streamWriter.writeStartElement("borrowedBook");
-                streamWriter.writeCharacters(libraryBook.getId()
-                        + " " + libraryBook.getBook().getTitle());
+                streamWriter.writeCharacters(String.valueOf(libraryBookId));
                 streamWriter.writeEndElement();
             }
             streamWriter.writeEndElement();
