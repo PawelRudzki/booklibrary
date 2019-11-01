@@ -21,8 +21,8 @@ public class LibraryHelper<T extends LibraryTypes> {
         }
     }
 
-    public Customer returnCustomerWithGivenID(int id, List<Customer> list) {
-        Optional<Customer> exists = list
+    public T returnLibraryTypeWithGivenID(int id, List<T> listOfLibraryTypes) {
+        Optional<T> exists = listOfLibraryTypes
                 .stream()
                 .filter(a -> a.getId() == id)
                 .findAny();
@@ -33,18 +33,6 @@ public class LibraryHelper<T extends LibraryTypes> {
         }
     }
 
-
-    public LibraryBook returnLibraryBookWithGivenID(int id, List<LibraryBook> list) {
-        Optional<LibraryBook> exists = list
-                .stream()
-                .filter(a -> a.getId() == id)
-                .findAny();
-        if (!exists.isPresent()) {
-            return null;
-        } else {
-            return exists.get();
-        }
-    }
 
     public void add(T libraryType, List<T> list) {
         if (!isThisIdInGivenList(libraryType.getId(), list)) {
@@ -62,10 +50,18 @@ public class LibraryHelper<T extends LibraryTypes> {
         }
     }
 
-    public long dateDifferenceToNow(Date date) {
+    public long daysFromGivenDateTillNow(Date date) {
         Date currentDate = new Date();
         long difference = currentDate.getTime() - date.getTime();
         return difference / ((long) (1000 * 60 * 60 * 24));
+    }
+
+    public boolean isThisBookAlreadyBorrowed(LibraryBook libraryBook) {
+        if (libraryBook.getBorrowedBy() == 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     //XML methods
@@ -92,7 +88,7 @@ public class LibraryHelper<T extends LibraryTypes> {
         streamWriter.writeStartDocument("1.0");
         streamWriter.writeStartElement("customers");
 
-        for(T libraryTypeObject : libraryTypeObjectsList){
+        for (T libraryTypeObject : libraryTypeObjectsList) {
             libraryTypeObject.writeToXML(streamWriter, writeBoorowingDetails);
         }
 

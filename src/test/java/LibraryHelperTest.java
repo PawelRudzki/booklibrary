@@ -84,14 +84,14 @@ public class LibraryHelperTest {
 
 
         //when
-        long result1 = library.getLibraryHelper().dateDifferenceToNow(simpleDateFormat.parse("2018-10-23"));
-        long result2 = library.getLibraryHelper().dateDifferenceToNow(simpleDateFormat.parse("2019-12-02"));
-        long result3 = library.getLibraryHelper().dateDifferenceToNow(simpleDateFormat.parse("2019-10-23"));
+        long result1 = library.getLibraryHelper().daysFromGivenDateTillNow(simpleDateFormat.parse("2018-10-23"));
+        long result2 = library.getLibraryHelper().daysFromGivenDateTillNow(simpleDateFormat.parse("2019-12-02"));
+        long result3 = library.getLibraryHelper().daysFromGivenDateTillNow(simpleDateFormat.parse("2019-10-23"));
 
         //then
-        assertEquals(372l, result1);
-        assertEquals(-32l, result2);
-        assertEquals(7l, result3);
+        assertEquals(374l, result1);
+        assertEquals(-30l, result2);
+        assertEquals(9l, result3);
 
     }
 }

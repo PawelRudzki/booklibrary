@@ -99,9 +99,9 @@ public class BooksContainer {
                     .findFirst()
                     .orElse(null);
             if (tmpBook != null) {
-                library.getLibraryHelper()
-                        .returnCustomerWithGivenID(tmpBook.getBorrowedBy(), library.getCustomerList())
-                        .returnBook(library, tmpBook.getId());
+                tmpCustomer = (Customer) library.getLibraryHelper()
+                        .returnLibraryTypeWithGivenID(tmpBook.getBorrowedBy(), library.getCustomerList());
+                tmpCustomer.returnBook(library, tmpBook.getId());
             } else {
                 break;
             }

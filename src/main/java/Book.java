@@ -25,7 +25,6 @@ public class Book {
         publicationYear="";
         publishingHouse="";
         bookCategory=BookCategory.OTHER;
-
     }
 
     @Override

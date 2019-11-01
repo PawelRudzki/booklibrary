@@ -5,6 +5,7 @@ import lombok.Setter;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Setter
 @Getter
@@ -19,12 +20,28 @@ public class Customer extends LibraryTypes {
 
 
     public void returnBook(Library library, int libraryBookId) {
-        library.acceptBook(libraryBookId);
+        if(booksBorrowedList.contains(libraryBookId)) {
+            library.acceptBook(libraryBookId);
+        } else {
+            throw new IllegalArgumentException("You don't have book of this ID!");
+        }
     }
 
 
     public void borrowBook(Library library, LibraryBook libraryBook) {
         library.lendBook(this, libraryBook);
+    }
+
+    public boolean isLimitOfBooksBorrowedReached(Library library){
+        List<LibraryBook> booksBorrowedByCustomer = library.getLibraryWarehouse()
+                .stream()
+                .filter(a -> a.getBorrowedBy() == this.getId())
+                .collect(Collectors.toList());
+        if (booksBorrowedByCustomer.size()<=library.getBOOKS_BORROWED_LIMIT()){
+            return false;
+        } else{
+            return true;
+        }
     }
 
 

@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 public class Library {
 
     private final double ONE_DAY_PENALTY = 0.10;
+    private final int BOOKS_BORROWED_LIMIT = 5;
     private List<LibraryBook> libraryWarehouse;
     private List<Customer> customerList;
     private final LibraryHelper libraryHelper = new LibraryHelper();
@@ -26,37 +27,32 @@ public class Library {
 
         //Is given customer ID in this library?
         if (!libraryHelper.isThisIdInGivenList(customer.getId(), this.getCustomerList())) {
-            throw new IllegalArgumentException("This is not our customer!");
+            throw new IllegalArgumentException("This is not customer of our library!");
         }
 
         //Is given customer penalty balance below limit?
         if (customer.getAccountBalance() > 20) {
-            throw new IllegalStateException("This customer owes us a lot of money!");
+            throw new IllegalStateException("This customer reached a limit of account balance");
         }
 
-        //Does given customer have less than 5 books from this library?
-        List<LibraryBook> booksBorrowedByCustomer = libraryWarehouse
-                .stream()
-                .filter(b -> b.getBorrowedBy() != 0)
-                .filter(a -> a.getBorrowedBy() == customer.getId())
-                .collect(Collectors.toList());
-        if (booksBorrowedByCustomer.size() > 5) {
-            throw new IllegalStateException("Sorry, you have too many books from us already!");
+        //Does given customer reach limit of books borrowed?
+        if (customer.isLimitOfBooksBorrowedReached(this)) {
+            throw new IllegalStateException("This customer reached limit of books borrowed from out library");
         } else {
 
             //Do we have requested book in this library?
             if (!libraryHelper.isThisIdInGivenList(libraryBook.getId(), this.getLibraryWarehouse())) {
-                throw new IllegalArgumentException("We don't have this book!");
+                throw new IllegalArgumentException("Book was not found in our library");
             } else {
 
-                //Is requested book not borrowed at the moment?
-                if (libraryBook.getBorrowedBy() == 0) {
+                if (!libraryHelper.isThisBookAlreadyBorrowed(libraryBook)) {
                     libraryBook.setBorrowedBy(customer.getId());
                     libraryBook.setBorrowDate(new Date());
                     customer.getBooksBorrowedList().add(libraryBook.getId());
                 } else {
                     throw new IllegalStateException("This book is already borrowed.");
                 }
+
             }
         }
     }
@@ -66,10 +62,10 @@ public class Library {
         if (!libraryHelper.isThisIdInGivenList(libraryBookId, this.getLibraryWarehouse())) {
             throw new IllegalArgumentException("This book is not from our library.");
         } else {
-            LibraryBook tmpLibraryBook = libraryHelper.returnLibraryBookWithGivenID(libraryBookId, this.libraryWarehouse);
-            long daysReturnedAfterDeadline = libraryHelper.dateDifferenceToNow(tmpLibraryBook.getBorrowDate());
+            LibraryBook tmpLibraryBook = (LibraryBook) libraryHelper.returnLibraryTypeWithGivenID(libraryBookId, this.libraryWarehouse);
+            long daysReturnedAfterDeadline = libraryHelper.daysFromGivenDateTillNow(tmpLibraryBook.getBorrowDate());
             if (daysReturnedAfterDeadline > tmpLibraryBook.getSingleBorrowingDuration()) {
-                Customer tmpCustomer = libraryHelper.returnCustomerWithGivenID(tmpLibraryBook.getBorrowedBy(), this.customerList);
+                Customer tmpCustomer = (Customer) libraryHelper.returnLibraryTypeWithGivenID(tmpLibraryBook.getBorrowedBy(), this.customerList);
                 tmpCustomer.setAccountBalance(
                         tmpCustomer.getAccountBalance() + daysReturnedAfterDeadline * ONE_DAY_PENALTY);
             }
@@ -113,7 +109,7 @@ public class Library {
                 List<LibraryBook> bookRaportList = libraryWarehouse
                         .stream()
                         .filter(b -> b.getBorrowDate() != null)
-                        .filter(a -> libraryHelper.dateDifferenceToNow(a.getBorrowDate()) > a.getSingleBorrowingDuration())
+                        .filter(a -> libraryHelper.daysFromGivenDateTillNow(a.getBorrowDate()) > a.getSingleBorrowingDuration())
                         .collect(Collectors.toList());
                 this.getLibraryHelper().createLibraryTypeRaport("KEPT BOOKS RAPORT", bookRaportList, true);
                 break;
